@@ -1,3 +1,8 @@
+<?php
+echo "la belle";
+?>
+
+{{--
 @extends('pages.basic')
 
 @section('head')
@@ -23,3 +28,4 @@
 	@include('js.home')
 	@parent
 @endsection
+--}}

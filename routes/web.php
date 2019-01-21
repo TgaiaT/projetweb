@@ -12,6 +12,9 @@
 */
 
 Route::get('/', function () {
+ 
+    echo "la belle";
+
     return view('home');
 });
 
