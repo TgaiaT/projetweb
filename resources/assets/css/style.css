@@ -6,7 +6,7 @@
 
 header
 {
-
+	text-align: left;
 }
 
 .navbar-item:hover
@@ -34,7 +34,7 @@ header
 
 #user-panier
 {
-	float: right;
+	float: left;
 }
 
 #logo
