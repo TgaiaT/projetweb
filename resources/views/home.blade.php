@@ -1,10 +1,8 @@
 @extends('pages.basic')
-        <link rel="stylesheet" href="public/css/style.css">
 
 @section('head')
 	@parent
 	@include('pages.base')
-	@include('css.home')
 @endsection
 
 @section('header')
@@ -21,6 +19,5 @@
 @endsection
 
 @section('scripts')
-	@include('js.home')
 	@parent
 @endsection

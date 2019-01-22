@@ -1,0 +1,45 @@
+*
+{
+   margin : 0; 
+   padding: 0;
+}
+
+header
+{
+
+}
+
+.navbar-item:hover
+{
+	background-color: #4678A1;
+	border-top-style: solid;
+	border-top-color: white;
+}
+
+.navbar-item
+{
+	border-top-style: solid;
+	border-top-color: #326295;
+}
+
+.headNav
+{
+	background-color: #326295;
+}
+
+#user-panier
+{
+	float: right;
+}
+
+#logo
+{
+	width: 15%;
+	height: 15%;
+	margin-left:15%; 
+}
+
+#menu
+{
+	margin-left: 10%;
+}
