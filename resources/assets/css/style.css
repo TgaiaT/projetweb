@@ -16,6 +16,11 @@ header
 	border-top-color: white;
 }
 
+.navbar-nav > li{
+  padding-left:10px;
+  padding-right:10px;
+}
+
 .navbar-item
 {
 	border-top-style: solid;
@@ -52,4 +57,40 @@ header
 #menuTop
 {
 	color: white;
+}
+
+body
+{
+	text-align: center;
+	overflow-x: hidden;
+}
+
+.conteneur
+{
+
+	background-color: #E5E5E5;
+	text-align: center;
+}
+
+article
+{
+	box-shadow: 5px 5px 2px black;
+}
+
+.explain
+{
+	border-right-style: solid;
+	border-right-color: #326295;
+}
+
+a:link
+{
+	text-decoration: underline dotted #326295;
+	color: #4678A1;
+}
+
+a:link:hover
+{
+	text-decoration: underline dotted #4678A1;
+	color: #326295;
 }
