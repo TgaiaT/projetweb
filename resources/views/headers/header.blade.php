@@ -10,12 +10,12 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="navbar-item" id="user-name">
                         @php
-                            if (isset($_SESSION['userloged']) && isset($_SESSION['user_pseudo']) && $_SESSION['userloged'] == true)
+                            if (isset($_SESSION['userloged']) && isset($_SESSION['user_name']) && isset($_SESSION['user_last-name']) && $_SESSION['userloged'] == true)
                             {
-                                echo '<span class="navbar-text mr-2">Bonjour '. $_SESSION['user_pseudo'] .' !</span></li><li class="navbar-item">';
+                                echo '<a href="../../personnel" class="nav-link">'. $_SESSION['user_name'] . $_SESSION['user_last-name'].' <i class="far fa-user"></i></a>';
                                 echo '<a href="../../deconnexion" class="nav-link">Déconnexion</a>';
                             } else {
-                                echo '<a href="../../connexion" class="nav-link">Connexion</a>';
+                                echo '<a href="../../connexion" class="nav-link">Connexion<i class="far fa-user"></i></a>';
                             }
                         @endphp
                     </li>
@@ -28,7 +28,7 @@
                                     echo '<a href="../../panier" class="nav-link">Panier: 00.00 €</a>';
                                 }
                             } else {
-                                echo '<a href="../../panier" class="nav-link">Panier:  00.00 €</a>';
+                                echo '<a href="../../panier" class="nav-link">Panier:  00.00 € <i class="fas fa-shopping-basket"></i></a>';
                             }
                         @endphp
                     </li>
@@ -37,22 +37,25 @@
             <div class="headLogo" id="second-head">
                 <img id="logo" src="resources/assets/Images/logo.png" alt="logo">
             </div>
+
             <nav class="navbar navbar-expand-md navbar-dark headNav row" id="third-head">
                 <ul class="navbar-nav" id="menu">
-                    <li class="navbar-item ">
-                        <a href="../../event" class="nav-link">EVENEMENTS</a>
+                    <button type="button" class="btn btn-dark" id="buttonMenu"><i class="fas fa-bars fa-3x" id="menuTop"></i></button>
+                    <li class="navbar-item submenu">
+                        <a href="../../event" class="nav-link"><i class="fas fa-users"></i>EVENEMENTS</a>
                     </li>
-                    <li class="navbar-item ">
-                        <a href="../../event" class="nav-link">BOITE A IDEES</a>
+                    <li class="navbar-item submenu">
+                        <a href="../../event" class="nav-link"><i class="far fa-lightbulb"></i>BOITE A IDEES</a>
                     </li>
-                    <li class="navbar-item ">
-                        <a href="../../event" class="nav-link">BOUTIQUE</a>
+                    <li class="navbar-item submenu">
+                        <a href="../../event" class="nav-link"><i class="fas fa-shopping-cart"></i>BOUTIQUE</a>
                     </li>
-                    <li class="navbar-item ">
-                        <a href="../../event" class="nav-link">CONTACT</a>
+                    <li class="navbar-item submenu">
+                        <a href="../../event" class="nav-link"><i class="far fa-envelope-open"></i>CONTACT</a>
                     </li>
                 </ul>
             </nav>
+
         </header>
     </body>
 </html>

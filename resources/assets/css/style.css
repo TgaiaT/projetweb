@@ -39,7 +39,17 @@ header
 	margin-left:15%; 
 }
 
+.submenu
+{
+	display: none;
+}
+
 #menu
 {
 	margin-left: 10%;
+}
+
+#menuTop
+{
+	color: white;
 }

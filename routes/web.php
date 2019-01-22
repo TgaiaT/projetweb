@@ -16,6 +16,11 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/basic', function () {
+
+    return view('pages/basic');
+});
+
 Route::get('connexion', 'ConnexionController@getForm');
 /*Route::post('connexion', 'ConnexionController@connect');*/
 Route::get('deconnexion', 'ConnexionController@disconnect');
