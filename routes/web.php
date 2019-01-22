@@ -15,25 +15,15 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('connexion', 'ConnexionController@getForm');
-/*Route::post('connexion', 'ConnexionController@connect');*/
-Route::get('deconnexion', 'ConnexionController@disconnect');
-Route::post('connexion', 'ConnexionController@traitement');
-
-
-Route::get('connexion', function () {
-    return view('connexion');
-});
-
-
-Route::get('deconnexion', function () {
-    return view('deconnexion');
-});
-
-
-Route::get('inscription', function () {
-    return view('inscription');
-});
+/*
+ * Connection routes - Connection controller
+ */
+Route::get('connexion', 'ConnexionController@getConnectionForm');
+Route::post('connexion', 'ConnexionController@connect');
+Route::get('deconnexion', 'ConnexionController@getDisconnectionForm');
+Route::post('deconnexion', 'ConnexionController@disconnect');
+Route::get('inscription', 'ConnexionController@getSigninForm');
+Route::post('inscription', 'ConnexionController@signin');
 
 
 Route::get('boutique', function () {
