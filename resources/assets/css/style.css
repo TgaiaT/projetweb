@@ -46,6 +46,7 @@ header
 
 .submenu
 {
+	/*On les affiche dans script.js si l'écran est assez grand ou si le menu dérroullant est dérroullé*/
 	display: none;
 }
 
@@ -67,18 +68,20 @@ body
 
 .conteneur
 {
-
+	/*La case grise contenant les articles*/
 	background-color: #E5E5E5;
 	text-align: center;
 }
 
 article
 {
+	/*Les box contenant les articles. Elles sont dans les conteneurs générallement*/
 	box-shadow: 5px 5px 2px black;
 }
 
 .explain
 {
+	/*les articles devant ressortir du lot ont la class explain*/
 	border-right-style: solid;
 	border-right-color: #326295;
 }
