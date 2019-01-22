@@ -1,9 +1,5 @@
-<?php
-echo "la belle"
-?>
-
-
-{{--@extends('pages.basic')
+@extends('pages.basic')
+        <link rel="stylesheet" href="public/css/style.css">
 
 @section('head')
 	@parent
@@ -28,4 +24,3 @@ echo "la belle"
 	@include('js.home')
 	@parent
 @endsection
---}}

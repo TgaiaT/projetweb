@@ -1,4 +1,46 @@
-<nav class="navbar navbar-expand-md sticky-top navbar-dark" style="background-color: steelblue;" id="navbar">
+@php 
+    session_start();
+@endphp
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- STYLE -->
+        <link rel="stylesheet" href="public/css/style.css">
+        
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-md sticky-top navbar-dark" id="first-head">
+                <ul class="navbar-nav">
+                    <li class="navbar-item">
+
+                        @php
+                            
+                            if (isset($_SESSION['userloged']) && isset($_SESSION['user_pseudo']) && $_SESSION['userloged'] == true)
+                            {
+                                echo '<span class="navbar-text mr-2">Bonjour '. $_SESSION['user_pseudo'] .' !</span></li><li class="navbar-item">';
+                                echo '<a href="../../deconnexion" class="nav-link">Déconnexion</a>';
+                            }
+                            else
+                            {
+                                echo '<a href="../../connexion" class="nav-link">Connexion</a>';
+                            }
+                        @endphp
+                    </li>
+                </ul>
+                
+            </nav>
+        </header>
+    </body>
+</html>
+
+
+
+
+
+
+{{--<nav class="navbar navbar-expand-md sticky-top navbar-dark" style="background-color: steelblue;" id="navbar">
     <a class="navbar-brand h1 mb-0" href="../../index.php">
         <img src="images/logo.png" width="30" height="30" alt="logo">
         BDE EXIA NANCY
@@ -45,3 +87,4 @@
         </ul>
     </div>
 </nav>
+--}}

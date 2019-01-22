@@ -1,3 +1,4 @@
+{{--
 <div class="container-fluid footer text-center pt-3">
     <div class="row">
         <div class="col">
@@ -10,3 +11,4 @@
 @push('test')
 	<script src="js/script.js"></script>
 @endpush
+--}}

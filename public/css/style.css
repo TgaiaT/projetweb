@@ -1,24 +1,14 @@
-.logo{
-    max-width: 64px;
-    max-height: 64px;
-    transition: opacity 0.5s;
+*
+{
+    background-color: #326295;
 }
 
-.cardImage{
-    max-height: 256px;
-    max-height: 256px;
+header
+{
+
 }
 
-.logo:hover{
-    opacity: 0.50;
-}
+#first-head
+{
 
-.footer{
-    background-color: steelblue;
-    display: inline-block;
-}
-
-.copyright{
-    max-height: 32px;
-    max-width: 32px;
 }
