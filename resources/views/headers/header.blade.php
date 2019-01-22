@@ -35,7 +35,7 @@
                 </ul>
             </nav>
             <div class="headLogo" id="second-head">
-                <img id="logo" src="resources/assets/Images/logo.png" alt="logo">
+                <a href="../../home"><img id="logo" src="resources/assets/Images/logo.png" alt="logo"></a>
             </div>
 
             <nav class="navbar navbar-expand-md navbar-dark headNav row" id="third-head">
