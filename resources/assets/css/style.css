@@ -150,3 +150,13 @@ a:link:hover
 {
 	font-weight: bold;
 }
+
+.cote
+{
+	display: inline;
+}
+
+.cadre
+{
+	padding: 3px;
+}

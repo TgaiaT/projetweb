@@ -14,8 +14,7 @@
 	@include('components.presentation')
 	@include('components.social')
 	@include('components.eventPresentation')
-	{{-- event a venir presentation --}}
-	{{-- souvenir présentaion --}}
+	@include('components.memoriesPresentation')
 	{{-- boite a idée présentation --}}
 	{{-- boutique présentation --}}
 @endsection

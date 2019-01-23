@@ -5,6 +5,7 @@
 			<p>
 				Le BDE du Cesi Exia propose régulièrement de nouveaux évenements permettant de faire bouger la vie associative et de faire vivre la bonne ambiance au seisn de l'école. Venez vous inscrire aux différentes activités proposés. Voici les prochains à venir:
 			</p>
+			<a class="liens" href="">Voir les évenements a venir...</a>
 		</article>
 		<article>
 			<div class="row">

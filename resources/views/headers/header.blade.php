@@ -21,7 +21,7 @@
             </li>
             <li class="navbar-item" id="user-panier">
                 @php
-                            /*Affichage du pannier si l'uttilisateur est connecté*/
+                    /*Affichage du pannier si l'uttilisateur est connecté*/
                     if (isset($_SESSION['userloged']) && isset($_SESSION['user_pseudo']) && $_SESSION['userloged']){
                         /*Si l'uttilisateur a deja un pannier on le reprend sinon on lui dit qu'il est vide*/
                         if(isset($_COOKIE['panier'])){
