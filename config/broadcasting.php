@@ -24,7 +24,7 @@ return [
     |
     | Here you may define all of the broadcast connections that will be used
     | to broadcast events to other systems or over websockets. Samples of
-    | each available type of connection are provided inside this array.
+    | each available type of login are provided inside this array.
     |
     */
 
@@ -43,7 +43,7 @@ return [
 
         'redis' => [
             'driver' => 'redis',
-            'connection' => 'default',
+            'login' => 'default',
         ],
 
         'log' => [

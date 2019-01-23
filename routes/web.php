@@ -21,7 +21,6 @@ Route::get('/', function () {
 Route::get('connexion', 'ConnexionController@getConnectionForm');
 Route::post('connexion', 'ConnexionController@connect');
 Route::get('deconnexion', 'ConnexionController@getDisconnectionForm');
-Route::post('deconnexion', 'ConnexionController@disconnect');
 Route::get('inscription', 'ConnexionController@getSigninForm');
 Route::post('inscription', 'ConnexionController@signin');
 

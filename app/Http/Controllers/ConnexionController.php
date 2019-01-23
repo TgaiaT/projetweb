@@ -18,11 +18,10 @@ class ConnexionController extends Controller
 	{
         if ($request->session()->get("isConnected"))
         {
-            return view('connexion', [
+            return response()->view('connexion', [
                 "connectionStatus" => "already_connected"
-            ]);
+            ])->header("refresh", "2;url=/");
         }
-
 		return view('connexion');
 	}
 
@@ -30,18 +29,22 @@ class ConnexionController extends Controller
     {
         if (!$request->session()->get("isConnected"))
         {
-            //TODO
+            return response()->view('deconnexion', [
+                "connectionStatus" => "not_loged"
+            ])->header("refresh", "2;url=/");
         }
-        return view('deconnexion');
+        $request->session()->flush();
+        return redirect("/");
+
     }
 
     public function getSigninForm(Request $request)
     {
         if ($request->session()->get("isConnected"))
         {
-            return view('connexion', [
+            return response()->view('connexion', [
                 "connectionStatus" => "already_connected"
-            ]);
+            ])->header("refresh", "2;url=/");
         }
         return view('inscription');
     }
@@ -49,13 +52,6 @@ class ConnexionController extends Controller
     /*
      * Connection procedures
      */
-	public function disconnect()
-	{
-        //TODO
-		return view('deconnexion');
-	}
-
-
 	public function connect(LoginRequest $request)
 	{
         $request->validated();
@@ -76,10 +72,10 @@ class ConnexionController extends Controller
                     'rank' => $result["users:id_rank"],
                     'campus' => $result["users:id_campus"],
                 ]);
-                return view('connexion', [
+                return response()->view('connexion', [
                     "user" => $result,
                     "connectionStatus" => "success"
-                ]);
+                ])->header("refresh", "2;url=/");
             }
             else
             {
@@ -116,9 +112,9 @@ class ConnexionController extends Controller
                     'rank' => $result["id_rank"],
                     'campus' => $result["id_campus"],
                 ]);
-                return view('inscription', [
+                return response()->view('inscription', [
                     "connectionStatus" => "success"
-                ]);
+                ])->header("refresh", "2;url=/");
             }
             else
             {

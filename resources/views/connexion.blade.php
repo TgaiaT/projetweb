@@ -14,21 +14,21 @@
     @if(isset($connectionStatus))
         @switch($connectionStatus)
             @case("success")
-                @include('components.connection.successConnection')
+                @include('components.connection.login.successConnection')
                 @break
             @case("already_connected")
-                @include('components.connection.alreadyConnected')
+                @include('components.connection.login.alreadyConnected')
                 @break
             @case("failure")
-                @include('components.connection.failureConnection')
-                @include('components.connection.connexionForm')
+                @include('components.connection.login.failureConnection')
+                @include('components.connection.login.connexionForm')
                 @break
 
             @default
                 @include('components.oops')
         @endswitch
     @else
-        @include('components.connection.connexionForm')
+        @include('components.connection.login.connexionForm')
     @endif
 @endsection
 

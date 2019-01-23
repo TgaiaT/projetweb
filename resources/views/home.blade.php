@@ -1,5 +1,6 @@
 @extends('pages.basic')
 
+
 @section('head')
 	@parent
 	@include('pages.base')
@@ -11,12 +12,11 @@
 @endsection
 
 @section('contents')
-	
 
 @endsection
 
 @section('footer')
-	@include('footers.footer')
+	    @include('footers.footer')
 @endsection
 
 @section('scripts')
