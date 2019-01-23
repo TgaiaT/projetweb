@@ -11,39 +11,25 @@
 @endsection
 
 @section('contents')
-	@include('components.connexionForm')
+    @if(isset($connectionStatus))
+        @switch($connectionStatus)
+            @case("success")
+                @include('components.connection.successConnection')
+                @break
+            @case("already_connected")
+                @include('components.connection.alreadyConnected')
+                @break
+            @case("failure")
+                @include('components.connection.failureConnection')
+                @include('components.connection.connexionForm')
+                @break
 
-    @php
-        $req = curl_init();
-        $header = [
-            //'Content-type: application/json',
-           'Authorization: passless@token',
-        ];
-        $params = [
-            "values" => [
-                "name" => "test",
-                "lastname" => "test",
-                "email" => "test",
-                "password" => "test",
-                "token" => "test",
-                "id_rank" => 1,
-                "id_campus" => 7,
-            ]
-        ];
-        $options = [
-            CURLOPT_URL => "api.vandeiheim.ovh:3000/users/7",
-            CURLOPT_CUSTOMREQUEST => "DELETE",
-            CURLOPT_POSTFIELDS => http_build_query($params),
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_HTTPHEADER => $header,
-        ];
-
-        curl_setopt_array($req, $options);
-
-        $res = json_decode(curl_exec($req), true);
-        print_r($res);
-        curl_close($req);
-    @endphp
+            @default
+                @include('components.oops')
+        @endswitch
+    @else
+        @include('components.connection.connexionForm')
+    @endif
 @endsection
 
 @section('footer')

@@ -11,12 +11,31 @@
 @endsection
 
 @section('contents')
-	
+    @if(isset($connectionStatus))
+        @switch($connectionStatus)
+            @case("success")
+            @include('components.connection.successSignin')
+            @break
+            @case("already_connected")
+            @include('components.connection.alreadyConnected')
+            @break
+            @case("failure")
+            @include('components.connection.failureSignin')
+            @include('components.connection.signinForm')
+            @break
 
+            @default
+            @include('components.oops')
+        @endswitch
+    @else
+        @include('components.connection.signinForm')
+    @endif
 @endsection
 
 @section('footer')
-	@include('footers.footer')
+    <div class="fixed-bottom">
+	    @include('footers.footer')
+    </div>
 @endsection
 
 @section('scripts')

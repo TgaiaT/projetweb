@@ -3,7 +3,6 @@
         <div class="col mx-auto py-2">
             <h2 class="mb-5">Merci d'indiquer vos identifiants :</h2>
 
-
 			{!!Form::open(['url' => 'connexion'])!!}
 					<div class="form-group row {!! $errors->has('email') ? 'has-error' : '' !!}">
 						{!!Form::label('email', 'Email', ['class' => 'col-sm-2 col-form-label'])!!}
@@ -40,8 +39,12 @@
 						</div>
 					</div>
 				{!!Form::close()!!}
-				
-			
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col mx-auto text-right">
+            <a href="inscription">Inscription</a>
         </div>
     </div>
 </div>
