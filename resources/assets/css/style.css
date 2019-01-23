@@ -76,6 +76,7 @@ main
 	/*La case grise contenant les articles*/
 	background-color: #E5E5E5;
 	margin: auto;
+	margin-top: 20px;
 	padding: 8px;
 	max-width: 90%;
 }
@@ -83,10 +84,15 @@ main
 article
 {
 	/*Les box contenant les articles. Elles sont dans les conteneurs générallement*/
+	padding: 9px;
 	box-shadow: 5px 5px 2px black;
+	overflow-x: hidden;
 	background-color: white;
 	max-width: 90%;
 	margin: auto;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	text-align: left;
 }
 
 .explain
@@ -118,7 +124,7 @@ a:link:hover
 	margin: auto;
 }
 
-ul li
+.socialList .socialLink
 {
 	display: inline;
 	list-style-type: none;
@@ -128,8 +134,19 @@ ul li
 {
 	text-align: left;
 	margin-left: 12%;
+	font-weight: bold;
 	/*Titre de page (tout en haut sur fond blanc: h1 class="titre"
 	 *Titre de section (en haut d'un conteneur a fond gris) : h3 class="titre"
 	 *Titre d'article (carré blanc a ombres avec ou sans class explain) : h5 class="titre"
 	 */
+}
+
+.souligne
+{
+	text-decoration: underline;
+}
+
+.prix
+{
+	font-weight: bold;
 }

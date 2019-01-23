@@ -13,6 +13,11 @@
 	<h1 class="titre">BDE Cesi Nancy</h1>
 	@include('components.presentation')
 	@include('components.social')
+	@include('components.eventPresentation')
+	{{-- event a venir presentation --}}
+	{{-- souvenir présentaion --}}
+	{{-- boite a idée présentation --}}
+	{{-- boutique présentation --}}
 @endsection
 
 @section('footer')
