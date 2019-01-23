@@ -1,0 +1,76 @@
+/*
+GLOBAL
+*/
+
+
+/*
+FOOTER
+*/
+
+#footer {
+    padding-top: 8px;
+    padding-bottom: 6px;
+    height: auto;
+    overflow-x: hidden;
+    background: #444444 !important;
+}
+
+#footer2 {
+    padding-top: 7px;
+    height: auto;
+    overflow-x: hidden;
+    background: #2b2b2b !important;
+}
+
+#footer h5 {
+    padding-right: 75px;
+    color: #ffffff;
+    font-size: 150%
+}
+
+#footer2 h5 {
+    padding-right: 50px;
+    color: #ffffff;
+    font-size: 80%
+}
+
+#footer2 h6 {
+    font-size: 75%
+}
+
+#footer2 h4 {
+    padding-left: 25px;
+    font-size: 75%
+}
+
+#footer a {
+    color: #ffffff;
+}
+
+#footer a:hover {
+    color: #326295;
+}
+
+#footer2 ul.social li a img {
+    -webkit-transition: .5s all ease;
+    -moz-transition: .5s all ease;
+    transition: .5s all ease;
+}
+
+#footer2 ul.social li:hover a img {
+    margin-top: -10px;
+}
+
+#footer2 ul.social li a,
+#footer2 ul.quick-links li a {
+    color: #ffffff;
+}
+
+#footer2 ul.social li a:hover {
+    color: #326295;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: 30px;
+}
