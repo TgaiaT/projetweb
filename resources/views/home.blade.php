@@ -10,8 +10,7 @@
 @endsection
 
 @section('contents')
-	
-
+	@include('components.presentation')
 @endsection
 
 @section('footer')

@@ -8,10 +8,13 @@
 	@show
 </head>
 <body>
+
 	@yield('header')
 	
-	@yield('contents')
-	
+	<div class="row">
+		@yield('contents')
+	</div>
+
 	@yield('footer')
 	
 	@section('scripts')

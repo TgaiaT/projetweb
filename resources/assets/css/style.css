@@ -1,12 +1,14 @@
 *
 {
-   margin : 0; 
-   padding: 0;
+	width: : 100%;
+   	margin : 0; 
+   	padding: 0;
 }
 
 header
 {
 	text-align: left;
+	padding-bottom: 15px;
 }
 
 .navbar-item:hover
@@ -96,4 +98,27 @@ a:link:hover
 {
 	text-decoration: underline dotted #4678A1;
 	color: #326295;
+}
+
+#titrePage
+{
+	/*Titre en haut de page sur fond blanc avant les conteneurs gris*/
+
+}
+
+.titreSection
+{
+	/*Titre sur fond gris dans les conteneurs*/
+
+}
+
+.titreContenu
+{
+	/*Titre des article sur les article blanc et de classe explain*/
+
+}
+
+#carouselPresentation
+{
+	margin:auto;
 }
