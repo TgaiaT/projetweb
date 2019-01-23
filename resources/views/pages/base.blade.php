@@ -13,7 +13,7 @@
 <body>
 	@yield('header')
 	
-	<main class="row">
+	<main>
 		@yield('contents')
 	</main>
 	

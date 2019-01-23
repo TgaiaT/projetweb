@@ -11,9 +11,9 @@
 
 	@yield('header')
 	
-	<div class="row">
+	<main>
 		@yield('contents')
-	</div>
+	</main>
 
 	@yield('footer')
 	

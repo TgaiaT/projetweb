@@ -12,10 +12,10 @@
                     /*Affichage du nom et prenom si connecté sinon affiche le lien vers la connection*/
                     if (isset($_SESSION['userloged']) && isset($_SESSION['user_name']) && isset($_SESSION['user_last-name']) && $_SESSION['userloged'] == true)
                     {
-                        echo '<a href="../../personnel" class="nav-link">'. $_SESSION['user_name'] . $_SESSION['user_last-name'].' <i class="far fa-user"></i></a>';
+                        echo '<a href="../../personnel" class="nav-link">'. $_SESSION['user_name'] . $_SESSION['user_last-name'].'   <i class="far fa-user"></i></a>';
                         echo '<a href="../../deconnexion" class="nav-link">Déconnexion</a>';
                     } else {
-                        echo '<a href="../../connexion" class="nav-link">Connexion<i class="far fa-user"></i></a>';
+                        echo '<a href="../../connexion" class="nav-link">Connexion   <i class="far fa-user"></i></a>';
                     }
                 @endphp
             </li>
@@ -25,12 +25,12 @@
                     if (isset($_SESSION['userloged']) && isset($_SESSION['user_pseudo']) && $_SESSION['userloged']){
                         /*Si l'uttilisateur a deja un pannier on le reprend sinon on lui dit qu'il est vide*/
                         if(isset($_COOKIE['panier'])){
-                            echo '<a href="../../panier" class="nav-link">Pannier:'.$_COOKIE['panier'].' €</a>';
+                            echo '<a href="../../panier" class="nav-link">Pannier:'.$_COOKIE['panier'].' €   <i class="fas fa-shopping-basket"></i></a>';
                         } else {
-                            echo '<a href="../../panier" class="nav-link">Panier: 00.00 €</a>';
+                            echo '<a href="../../panier" class="nav-link">Panier: 00.00 €   <i class="fas fa-shopping-basket"></i></a>';
                         }
                     } else {
-                        echo '<a href="../../panier" class="nav-link">Panier:  00.00 € <i class="fas fa-shopping-basket"></i></a>';
+                        echo '<a href="../../panier" class="nav-link">Panier:  00.00 €   <i class="fas fa-shopping-basket"></i></a>';
                     }
                  @endphp
             </li>
@@ -47,16 +47,16 @@
         <ul class="navbar-nav" id="menu">
             <button type="button" class="btn btn-dark" id="buttonMenu"><i class="fas fa-bars fa-2x" id="menuTop"></i></button>
             <li class="navbar-item submenu">
-                <a href="../../event" class="nav-link"><i class="fas fa-users"></i>EVENEMENTS</a>
+                <a href="../../event" class="nav-link"><i class="fas fa-users"></i>   EVENEMENTS</a>
             </li>
             <li class="navbar-item submenu">
-                <a href="../../event" class="nav-link"><i class="far fa-lightbulb"></i>BOITE A IDEES</a>
+                <a href="../../event" class="nav-link"><i class="far fa-lightbulb"></i>   BOITE A IDEES</a>
             </li>
             <li class="navbar-item submenu">
-                <a href="../../event" class="nav-link"><i class="fas fa-shopping-cart"></i>BOUTIQUE</a>
+                <a href="../../event" class="nav-link"><i class="fas fa-shopping-cart"></i>   BOUTIQUE</a>
             </li>
             <li class="navbar-item submenu">
-                <a href="../../event" class="nav-link"><i class="far fa-envelope-open"></i>CONTACT</a>
+                <a href="../../event" class="nav-link"><i class="far fa-envelope-open"></i>   CONTACT</a>
             </li>
         </ul>
     </nav>

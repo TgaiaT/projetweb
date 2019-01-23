@@ -10,7 +10,9 @@
 @endsection
 
 @section('contents')
+	<h1 class="titre">BDE Cesi Nancy</h1>
 	@include('components.presentation')
+	@include('components.social')
 @endsection
 
 @section('footer')

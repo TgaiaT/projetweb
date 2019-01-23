@@ -1,8 +1,6 @@
 *
 {
-	width: : 100%;
-   	margin : 0; 
-   	padding: 0;
+	
 }
 
 header
@@ -68,24 +66,34 @@ body
 	overflow-x: hidden;
 }
 
+main
+{
+	text-align: center;
+}
+
 .conteneur
 {
 	/*La case grise contenant les articles*/
 	background-color: #E5E5E5;
-	text-align: center;
+	margin: auto;
+	padding: 8px;
+	max-width: 90%;
 }
 
 article
 {
 	/*Les box contenant les articles. Elles sont dans les conteneurs générallement*/
 	box-shadow: 5px 5px 2px black;
+	background-color: white;
+	max-width: 90%;
+	margin: auto;
 }
 
 .explain
 {
 	/*les articles devant ressortir du lot ont la class explain*/
-	border-right-style: solid;
-	border-right-color: #326295;
+	border-left-style: solid;
+	border-left-color: #326295;
 }
 
 a:link
@@ -100,25 +108,28 @@ a:link:hover
 	color: #326295;
 }
 
-#titrePage
+#presentation
 {
-	/*Titre en haut de page sur fond blanc avant les conteneurs gris*/
-
-}
-
-.titreSection
-{
-	/*Titre sur fond gris dans les conteneurs*/
-
-}
-
-.titreContenu
-{
-	/*Titre des article sur les article blanc et de classe explain*/
-
+	margin-bottom: 15px;
 }
 
 #carouselPresentation
 {
-	margin:auto;
+	margin: auto;
+}
+
+ul li
+{
+	display: inline;
+	list-style-type: none;
+}
+
+.titre
+{
+	text-align: left;
+	margin-left: 12%;
+	/*Titre de page (tout en haut sur fond blanc: h1 class="titre"
+	 *Titre de section (en haut d'un conteneur a fond gris) : h3 class="titre"
+	 *Titre d'article (carré blanc a ombres avec ou sans class explain) : h5 class="titre"
+	 */
 }
