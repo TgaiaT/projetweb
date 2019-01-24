@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'IndexController@index');
 
 /*
  * Connection routes - Connection controller
@@ -25,14 +23,12 @@ Route::get('inscription', 'ConnexionController@getSigninForm');
 Route::post('inscription', 'ConnexionController@signin');
 
 
-Route::get('boutique', function () {
-    return view('boutique');
-});
+Route::get('boutique', 'ProductsController@showShop');
+Route::post('boutique', 'ProductsController@addToBasket');
 
 
-Route::get('event', function () {
-    return view('event');
-});
+Route::get('event', 'EventsController@showEvents');
+Route::post('event', 'EventsController@comment');
 
 
 Route::get('contact', function () {

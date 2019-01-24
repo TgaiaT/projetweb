@@ -11,8 +11,7 @@
 @endsection
 
 @section('contents')
-	
-
+    @include('components.events.events')
 @endsection
 
 @section('footer')

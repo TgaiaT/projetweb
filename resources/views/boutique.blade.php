@@ -11,8 +11,7 @@
 @endsection
 
 @section('contents')
-
-
+    @include('components.products.products')
 @endsection
 
 @section('footer')

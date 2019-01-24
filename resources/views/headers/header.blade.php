@@ -10,12 +10,12 @@
     <div class="collapse navbar-collapse mr-auto" id="navbartab">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link active" href="../../index.php#aboutUs">
+                <a class="nav-link active" href="/boutique">
                     Boutique 
                 </a>
             </li>
             <li class="navbar-item">
-                <a class="nav-link" href="../../index.php#services">
+                <a class="nav-link" href="/event">
                     Events
                 </a>
             </li>
