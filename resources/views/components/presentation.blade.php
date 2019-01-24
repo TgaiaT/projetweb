@@ -11,21 +11,21 @@
 	    </ol>
 		<div class="carousel-inner">
 		    <div class="carousel-item active">
-		        <img class="d-block w-100" src="resources/assets/Images/bde.jpg" alt="First slide" />
+		        <img class="d-block w-100" src="http://localhost/projetweb/resources/assets/Images/bde.jpg" alt="First slide" />
 		        <div class="carousel-caption d-none d-md-block">
 		          	<h5>BDE EXIA NANCY</h5>
 		          	<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
 		        </div>
 		    </div>
 		    <div class="carousel-item">
-		        <img class="d-block w-100" src="resources/assets/Images/bde.jpg" alt="Second slide" />
+		        <img class="d-block w-100" src="http://localhost/projetweb/resources/assets/Images/bde.jpg" alt="Second slide" />
 		        <div class="carousel-caption d-none d-md-block">
 		          	<h5>Evenements</h5>
 		          	<p>Le BDE organise régulièrement des évenements permettant d'animer la vie associative du cesi exia nancy. Venez vous inscrire aux prochains a venirs!</p>
 		        </div>
 		    </div>
 		    <div class="carousel-item">
-		        <img class="d-block w-100" src="resources/assets/Images/bde.jpg" alt="Third slide" />
+		        <img class="d-block w-100" src="http://localhost/projetweb/resources/assets/Images/bde.jpg" alt="Third slide" />
 		        <div class="carousel-caption d-none d-md-block">
 		          	<h5>Souvenirs</h5>
 		          	<p>Venez poster de photos et commenter les évenement passés.</p>
@@ -33,7 +33,7 @@
 		    </div>
 		</div>
 		<div class="carousel-item">
-		        <img class="d-block w-100" src="resources/assets/Images/bde.jpg"}" alt="Fourth slide" />
+		        <img class="d-block w-100" src="http://localhost/projetweb/resources/assets/Images/bde.jpg"}" alt="Fourth slide" />
 		        <div class="carousel-caption d-none d-md-block">
 		          	<h5>Boite a idées</h5>
 		          	<p>Une idée d'activité a proposer? Venez la partager et voter pour vos idées préfférés.</p>
@@ -41,7 +41,7 @@
 		    </div>
 		</div>
 		<div class="carousel-item">
-		        <img class="d-block w-100" src="resources/assets/Images/bde.jpg"" alt="Fifth slide" />
+		        <img class="d-block w-100" src="http://localhost/projetweb/resources/assets/Images/bde.jpg"" alt="Fifth slide" />
 		        <div class="carousel-caption d-none d-md-block">
 		          	<h5>Boutique</h5>
 		          	<p>Venez commander des produits dans l'épicerie en ligne de votre BDE.</p>

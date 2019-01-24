@@ -11,7 +11,7 @@
 			<div class="row">
 					<h5 class="titre col-sm-5 col-md-5 col-lg-5 col-xl-5">Nom du dernier évenement passé</h5>
 					<p class="date col-sm-5 col-md-5 col-lg-5 col-xl-5"> 03/24/2019 </p>	
-				<img src="resources/assets/Images/bde.jpg" alt="imageEvent" class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+				<img src="http://localhost/projetweb/resources/assets/Images/bde.jpg" alt="imageEvent" class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
 
 				<p class="descriptionEvent col-sm-12 col-md-5 col-lg-8 col-xl-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi.</p>
 				<p class="lieu col-sm-4 col-md-4 col-lg-2 col-xl-2"> Epinal</p>
@@ -23,7 +23,7 @@
 			<div class="row cadre">
 				<h5 class="titre col-sm-12 col-md-12 col-lg-12 col-xl-12">Les dernieres photos postées</h5>
 				<div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 row cadre">
-					<img src="resources/assets/Images/bde.jpg" alt="imageEvent" class="col-sm-12 col-md-10 col-lg-12 col-xl-12">
+					<img src="http://localhost/projetweb/resources/assets/Images/bde.jpg" alt="imageEvent" class="col-sm-12 col-md-10 col-lg-12 col-xl-12">
 					<div class="col-sm-12 col-md-2 col-lg-12 col-xl-12 row">
 						<div class="col-sm-6 col-md-12 col-lg-6 col-xl-6">
 							@php
@@ -54,7 +54,7 @@
 
 
 				<div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 row cadre">
-					<img src="resources/assets/Images/bde.jpg" alt="imageEvent" class="col-sm-12 col-md-10 col-lg-12 col-xl-12">
+					<img src="http://localhost/projetweb/resources/assets/Images/bde.jpg" alt="imageEvent" class="col-sm-12 col-md-10 col-lg-12 col-xl-12">
 					<div class="col-sm-12 col-md-2 col-lg-12 col-xl-12 row">
 						<div class="col-sm-6 col-md-12 col-lg-6 col-xl-6">
 							@php
@@ -80,7 +80,7 @@
 					</div>
 				</div>
 				<div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 row cadre">
-					<img src="resources/assets/Images/bde.jpg" alt="imageEvent" class="col-sm-12 col-md-10 col-lg-12 col-xl-12">
+					<img src="http://localhost/projetweb/resources/assets/Images/bde.jpg" alt="imageEvent" class="col-sm-12 col-md-10 col-lg-12 col-xl-12">
 					<div class="col-sm-12 col-md-2 col-lg-12 col-xl-12 row">
 						<div class="col-sm-6 col-md-12 col-lg-6 col-xl-6">
 							@php

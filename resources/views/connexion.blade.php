@@ -3,7 +3,6 @@
 @section('head')
 	@parent
 	@include('pages.base')
-	@include('css.home')
 @endsection
 
 @section('header')
@@ -21,6 +20,6 @@
 @endsection
 
 @section('scripts')
-	@include('js.home')
+	{{-- @include('js.home') --}}
 	@parent
 @endsection

@@ -1,47 +1,38 @@
-<div class="container my-5">
-    <div class="row">
-        <div class="col mx-auto py-2">
-            <h2 class="mb-5">Merci d'indiquer vos identifiants :</h2>
-
-
-			{!!Form::open(['url' => 'connexion'])!!}
-					<div class="form-group row {!! $errors->has('email') ? 'has-error' : '' !!}">
-						{!!Form::label('email', 'Email', ['class' => 'col-sm-2 col-form-label'])!!}
-						<div class="col-sm-10">
-							{!!Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Votre adresse email'])!!}
-							{!! $errors->first('email', '<small class="help-block">:message</small>') !!}
+<div id="connexionContent">
+	<h1 class="titre">Connexion</h1>
+	<div class="conteneur">
+		<article>
+			<h3 class="titre">Rentrez vos identifiants:</h3>
+			<form method="POST" action="{{-- A RENTREZ ICI --}}" accept-charset="UTF-8"><input name="_token" type="hidden" value="{{-- bpQ7vlXxenwdnr6YPpzYY1C97Lbw2ii53U9Xk77h --}}">
+				<div class="form-group row ">
+					<label for="email" class="col-sm-2 col-form-label">Email</label>
+					<div class="col-sm-10">
+						<input class="form-control" placeholder="Votre adresse email" name="email" type="email" id="email">	
+					</div>
+				</div>
+				<div class="form-group  row">
+					<label for="password" class="col-sm-2 col-form-label">Mot de passe</label>
+					<div class="col-sm-10">
+						<input class="form-control" placeholder="Mot de passe" name="password" type="password" value="" id="password">		
+					</div>
+				</div>
+				<div class="form-group row text-center">
+					<div class="col">
+						<div class="form-check">
+							<input name="keepConnect" class="form-check-input" type="checkbox" id="gridCheck">
+							<label class="form-check-label" for="gridCheck">
+								Me connecter automatiquement durant mes prochaines connexions
+							</label>
 						</div>
 					</div>
-
-
-					<div class="form-group {!! $errors->has('password') ? 'has-error' : '' !!} row">
-						{!!Form::label('password', 'Mot de passe', ['class' => 'col-sm-2 col-form-label'])!!}
-						<div class="col-sm-10">
-							{!!Form::password('password', ['class' => 'form-control', 'placeholder' => 'Mot de passe'])!!}
-							{!! $errors->first('password', '<small class="help-block">:message</small>') !!}
-						</div>
+				</div>
+				<div class="form-group row text-right">
+					<div class="col">
+						<input class="btn btn-primary" type="submit" value="Se connecter">
 					</div>
-
-
-					<div class="form-group row text-center">
-						<div class="col">
-							<div class="form-check">
-								<input name="keepConnect" class="form-check-input" type="checkbox" id="gridCheck">
-								<label class="form-check-label" for="gridCheck">
-									Me connecter automatiquement durant mes prochaines connexions
-								</label>
-							</div>
-						</div>
-					</div>
-
-					<div class="form-group row text-right">
-						<div class="col">
-							{!!Form::submit('Se connecter', ['class' => 'btn btn-primary'])!!}
-						</div>
-					</div>
-				{!!Form::close()!!}
-				
-			
-        </div>
-    </div>
+				</div>
+			</form>
+			<a href="http://localhost/projetweb/sever.php/inscription" class="liens">Pas encore de compte? Inscrivez-vous!</a>
+		</article>
+	</div>
 </div>

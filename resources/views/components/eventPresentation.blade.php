@@ -11,7 +11,7 @@
 			<div class="row">
 					<h5 class="titre col-sm-5 col-md-5 col-lg-5 col-xl-5">Nom de l'évenement</h5>
 					<p class="date col-sm-5 col-md-5 col-lg-5 col-xl-5"> 03/24/2019 </p>	
-				<img src="resources/assets/Images/bde.jpg" alt="imageEvent" class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+				<img src="http://localhost/projetweb/resources/assets/Images/bde.jpg" alt="imageEvent" class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
 
 				<p class="descriptionEvent col-sm-12 col-md-5 col-lg-8 col-xl-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi.</p>
 				<p class="lieu col-sm-4 col-md-4 col-lg-2 col-xl-2"> Epinal</p>
@@ -29,5 +29,7 @@
 				<a class="liens" href="">En savoir plus...</a>
 			</div>
 		</article>
+
+		{{-- A RECREER DEUX FOIS ENCORE EN PHP --}}
 	</div>
 </div>

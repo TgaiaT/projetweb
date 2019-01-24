@@ -21,7 +21,7 @@ Route::get('/basic', function () {
     return view('pages/basic');
 });
 
-Route::get('connexion', 'ConnexionController@getForm');
+//Route::get('connexion', 'ConnexionController@getForm');
 /*Route::post('connexion', 'ConnexionController@connect');*/
 Route::get('deconnexion', 'ConnexionController@disconnect');
 Route::post('connexion', 'ConnexionController@traitement');

@@ -15,7 +15,7 @@
                         echo '<a href="../../personnel" class="nav-link">'. $_SESSION['user_name'] . $_SESSION['user_last-name'].'   <i class="far fa-user"></i></a>';
                         echo '<a href="../../deconnexion" class="nav-link">Déconnexion</a>';
                     } else {
-                        echo '<a href="../../connexion" class="nav-link">Connexion   <i class="far fa-user"></i></a>';
+                        echo '<a href="http://localhost/projetweb/server.php/connexion" class="nav-link">Connexion   <i class="far fa-user"></i></a>';
                     }
                 @endphp
             </li>
@@ -39,7 +39,7 @@
 
     {{-- Deuxieme barre du header qui n'affiche que le logo. cliquer sur le logo mene a la page d'index --}}
     <div class="headLogo" id="second-head">
-        <a href="../../home"><img id="logo" src="resources/assets/Images/logo.png" alt="logo"></a>
+        <a href="../../home"><img id="logo" src="http://localhost/projetweb/resources/assets/Images/logo.png" alt="logo"></a>
     </div>
 
     {{-- Troisieme et derniere barre du header bleu elle aussi elle contient un menu dérroullant menant aux différentes section du sites. Si l'écran est grand alors on cache le menu dérroullant. ca se passe dans script.js--}}

@@ -11,7 +11,7 @@ $(function(){ /*Si le DOM est bien chargé alors:*/
 			$('.submenu').css('display', 'block');
 			$('#logo').css('width','15%');
 			$('#logo').css('height','15%');
-		}	
+		}
 	}
 
 	actualise();/*Au commencement du code, on actualise l'affichage*/
