@@ -2,7 +2,7 @@
 	<h1 class="titre">Inscription</h1>
 	<div class="conteneur">
 		<article>
-			<h3 class="titre">Rentrez vos informations:</h3>
+			<h5 class="titre">Rentrez vos informations:</h5>
 			<form method="POST" action="{{--  --}}" accept-charset="UTF-8"><input name="_token" type="hidden" value="{{--  --}}">
 	            <div class="form-group row ">
 	                <label for="name" class="col-sm-2 col-form-label">Pr&eacute;nom</label>
