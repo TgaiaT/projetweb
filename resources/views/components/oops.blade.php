@@ -3,5 +3,5 @@
     <p>
         Please report this error to the staff.
     </p>
-    <img src="../../../public/images/java.png">
+    <img src="/images/404.gif">
 </div>

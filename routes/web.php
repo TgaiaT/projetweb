@@ -29,16 +29,16 @@ Route::post('boutique', 'ProductsController@addToBasket');
 
 Route::get('event', 'EventsController@showEvents');
 Route::post('event', 'EventsController@comment');
-
+Route::get('event/create', 'EventsController@showCreateForm');
+Route::post('event/create', 'EventsController@createEvent');
 
 Route::get('contact', function () {
     return view('contact');
 });
 
 
-Route::get('idee', function () {
-    return view('idee');
-});
+Route::get('idees', 'ActivitiesController@showActivities');
+Route::post('idees', 'ActivitiesController@createActivity');
 
 
 Route::get('personnel', function () {

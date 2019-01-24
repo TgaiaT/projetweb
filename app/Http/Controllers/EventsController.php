@@ -10,8 +10,20 @@ class EventsController extends Controller
     public function showEvents(Request $request)
     {
         $events = EventsRepository::getEvents();
+        //$events = EventsRepository::filterByDate($events, "future", null);
         return view('event', [
-            "events" => $events,
+            "futureEvents" => EventsRepository::filterByDate($events, "future", null),
+            "pastEvents" => EventsRepository::filterByDate($events, "past", null),
         ]);
+    }
+
+    public function showCreateForm()
+    {
+
+    }
+
+    public function createEvent()
+    {
+
     }
 }

@@ -11,7 +11,18 @@
 @endsection
 
 @section('contents')
-    @include('components.events.events')
+    <h2 class="text-center">
+        Evénements à venir :
+    </h2>
+    @include('components.events.events', [
+        "events" => $futureEvents
+    ])
+    <h2 class="text-center">
+        Evénements passés :
+    </h2>
+    @include('components.events.events', [
+        "events" => $pastEvents
+    ])
 @endsection
 
 @section('footer')

@@ -11,8 +11,7 @@
 @endsection
 
 @section('contents')
-	
-
+    @include('components.activities.activities')
 @endsection
 
 @section('footer')

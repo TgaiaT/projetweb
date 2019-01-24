@@ -54,6 +54,8 @@ class PicturesRepository
                 $picture["comments"][$comment["comments:id_comment"]]["id"] = $comment["comments:id_comment"];
                 $picture["comments"][$comment["comments:id_comment"]]["comment"] = $comment["comments:comment"];
                 $picture["comments"][$comment["comments:id_comment"]]["id_user"] = $comment["comments:id_user"];
+                $picture["comments"][$comment["comments:id_comment"]]["user_name"] = $comment["users:name"];
+                $picture["comments"][$comment["comments:id_comment"]]["user_lastname"] = $comment["users:lastname"];
                 $picture["comments"][$comment["comments:id_comment"]]["id_state"] = $comment["comments:id_state"];
             }
             array_push($filteredPictures, $picture);

@@ -26,6 +26,44 @@ class EventsRepository
         }
     }
 
+    public static function filterByDate($events, $filter, $limit)
+    {
+        $filteredEvents = [];
+        $actualTime = time();
+        foreach ($events as $event)
+        {
+            if (isset($filter) && $filter == "future")
+            {
+                if (strtotime($event["date"]) > $actualTime)
+                {
+                    if (isset($limit) && strtotime($event["date"]) <= $actualTime + $limit)
+                    {
+                        array_push($filteredEvents, $event);
+                    }
+                    elseif (!isset($limit))
+                    {
+                        array_push($filteredEvents, $event);
+                    }
+                }
+            }
+            elseif (isset($filter) && $filter == "past")
+            {
+                if (strtotime($event["date"]) <= $actualTime)
+                {
+                    if (isset($limit) && strtotime($event["date"]) >= $actualTime - $limit)
+                    {
+                        array_push($filteredEvents, $event);
+                    }
+                    elseif (!isset($limit))
+                    {
+                        array_push($filteredEvents, $event);
+                    }
+                }
+            }
+        }
+        return $filteredEvents;
+    }
+
     private static function filterEvents($events)
     {
         $filteredEvents =  [];
@@ -79,8 +117,9 @@ class EventsRepository
                 $event["pictures"][$picture["pictures:id_picture"]]["id"] = $picture["pictures:id_picture"];
                 $event["pictures"][$picture["pictures:id_picture"]]["url"] = $picture["pictures:picture_url"];
                 $event["pictures"][$picture["pictures:id_picture"]]["id_state"] = $picture["states:id_state"];
-                $comments = PicturesRepository::getPictures($picture["pictures:id_picture"]);
-                $event["pictures"][$picture["pictures:id_picture"]]["comments"] = $comments;
+                $more = PicturesRepository::getPictures($picture["pictures:id_picture"]);
+                $event["pictures"][$picture["pictures:id_picture"]]["comments"] = $more[0]["comments"];
+                $event["pictures"][$picture["pictures:id_picture"]]["likes"] = count($more[0]["liked"]);
 
             }
             array_push($filteredEvents, $event);
