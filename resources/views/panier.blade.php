@@ -11,7 +11,7 @@
 @endsection
 
 @section('contents')
-	
+	<h1 class="titre">Mon pannier</h1>
 
 @endsection
 

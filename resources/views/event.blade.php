@@ -10,10 +10,11 @@
 @endsection
 
 @section('contents')
+	<h1 class="titre">Evenements</h1>
 	@include('components.eventPresentation')
+	@include('components.memoriesPresentation')
 	@include('components.searchForm')
 	@include('components.eventTemplate')
-
 @endsection
 
 @section('footer')

@@ -11,7 +11,7 @@
 @endsection
 
 @section('contents')
-	
+	<h1 class="titre">Mon espace perso</h1>
 
 @endsection
 

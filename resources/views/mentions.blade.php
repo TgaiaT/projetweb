@@ -11,7 +11,7 @@
 @endsection
 
 @section('contents')
-	
+	<h1 class=titre>Mention légales</h1>
 
 @endsection
 

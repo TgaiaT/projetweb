@@ -11,6 +11,7 @@
 @endsection
 
 @section('contents')
+	<h1 class='titre'>Contact</h1>
 	@include('components.social')
 
 @endsection
