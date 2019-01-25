@@ -48,6 +48,7 @@ Route::get('contact', function () {
  */
 Route::get('idees', 'ActivitiesController@showActivities');
 Route::post('idees/create', 'ActivitiesController@createActivity');
+Route::post('idees/update', 'ActivitiesController@updateActivity');
 
 /*
  * Personal space

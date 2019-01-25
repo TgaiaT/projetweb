@@ -12,15 +12,6 @@
 
 @section('contents')
     @if(session()->get("isConnected") && session()->all()["user"]["rankLevel"] >= 5)
-        @if(isset($creation_message))
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col mx-auto text-center border-light">
-                        <h3>{{$creation_message}}</h3>
-                    </div>
-                </div>
-            </div>
-        @endif
         @include('components.events.eventsForm')
     @else
         @include('components.oops')
