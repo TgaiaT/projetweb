@@ -160,3 +160,9 @@ a:link:hover
 {
 	padding: 3px;
 }
+
+.cadrePleins
+{
+	padding: 3px;
+	background-color: #E5E5E5;
+}
