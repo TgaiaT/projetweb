@@ -11,7 +11,7 @@
 @endsection
 
 @section('contents')
-	
+	@include('components.social')
 
 @endsection
 

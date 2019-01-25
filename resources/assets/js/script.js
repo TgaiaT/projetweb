@@ -27,4 +27,28 @@ $(function(){ /*Si le DOM est bien chargé alors:*/
 	$(window).resize(function(){/*Si la page est redimmensionné, on l'actualise*/
 		actualise();
 	});
+
+	/*-----------------script des images selectionné-------------------------*/
+
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    
+
+    $('img').each(function(index){
+    	$(this).on('click', function(){
+    		if(!$(this).hasClass('nonClickable')){
+				$('#myModal').css('display', "block");
+		      	$("#img01").attr('src', $(this).attr('src'));
+		      	$("#caption").text( $(this).attr('alt'));
+    		}
+    	})
+    })
+
+    // Get the <span> element that closes the modal
+    var span = $(".close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() { 
+      	$('#myModal').css('display', "none");
+    }
 });

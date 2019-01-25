@@ -10,6 +10,8 @@
 @endsection
 
 @section('contents')
+	@include('components.eventPresentation')
+	@include('components.searchForm')
 	@include('components.eventTemplate')
 
 @endsection

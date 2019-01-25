@@ -15,8 +15,8 @@
 	@include('components.social')
 	@include('components.eventPresentation')
 	@include('components.memoriesPresentation')
-	{{-- boite a idée présentation --}}
-	{{-- boutique présentation --}}
+	@include('components.ideasPresentation')
+	@include('components.boutiquePresentation')
 @endsection
 
 @section('footer')

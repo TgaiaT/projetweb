@@ -12,13 +12,7 @@
 
 @section('contents')
 	@include('components.boutiquePresentation')
-	{{--@php
-		if(isset($_GET['search']) || isset(isset($_GET['tri']) || isset(isset($_GET['plancher']) || isset(isset($_GET['plafond']) || isset(isset($_GET['catégorie']) ){
-			//GENERER LA PAGE RECHERCHE
-		} else {
-			@include('components.boutiqueVitrine')
-		}
-	@endphp --}}
+	@include('components.searchForm')
 	@include('components.boutiqueVitrine')
 @endsection
 

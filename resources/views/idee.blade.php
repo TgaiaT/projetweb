@@ -1,5 +1,4 @@
 
-{{--
 @extends('pages.basic')
 
 @section('head')
@@ -13,7 +12,8 @@
 @endsection
 
 @section('contents')
-	
+	@include('components.ideasPresentation')
+	@include('components.searchForm')
 
 @endsection
 
@@ -25,4 +25,3 @@
 	@include('js.home')
 	@parent
 @endsection
---}}
