@@ -2,17 +2,15 @@
     <div class="row">
         @foreach($activities as $activity)
             @if($activity["state"] == $state)
-                <div class="col">
-                    <div class="col mx-auto">
-                        <h4>{{$activity["name"]}}</h4>
-                        <p>{{$activity["description"]}}</p>
-                        @if($state == "pending")
-                            <p>Nombre de votes : {{count($activity["voters"])}}</p>
-                            @if(session()->get("isConnected") && !in_array(session()->all()["user"]["id"], $activity["voters"]))
-                                <button class="btn btn-primary">Voter pour cette activité</button>
-                            @endif
+                <div class="col-5 my-2 mx-auto border border-secondary">
+                    <h4 class="text-left">{{$activity["name"]}}</h4>
+                    <p class="border-top border-bottom border-dark">{{isset($activity["description"]) ? $activity["description"] : ""}}</p>
+                    @if($state == "pending")
+                        <p class="text-right">Votes : {{isset($activity["voters"]) ? count($activity["voters"]) : 0}}</p>
+                        @if(session()->get("isConnected") && !in_array(session()->all()["user"]["id"], $activity["voters"]))
+                            <button class="btn btn-outline-primary mx-auto my-2">Voter pour cette activité</button>
                         @endif
-                    </div>
+                    @endif
                 </div>
             @endif
         @endforeach

@@ -18,34 +18,47 @@ Route::get('/', 'IndexController@index');
  */
 Route::get('connexion', 'ConnexionController@getConnectionForm');
 Route::post('connexion', 'ConnexionController@connect');
-Route::get('deconnexion', 'ConnexionController@getDisconnectionForm');
+Route::get('deconnexion', 'ConnexionController@disconnect');
 Route::get('inscription', 'ConnexionController@getSigninForm');
 Route::post('inscription', 'ConnexionController@signin');
 
-
+/*
+ * Shop
+ */
 Route::get('boutique', 'ProductsController@showShop');
 Route::post('boutique', 'ProductsController@addToBasket');
 
-
+/*
+ * Events
+ */
 Route::get('event', 'EventsController@showEvents');
 Route::post('event', 'EventsController@comment');
 Route::get('event/create', 'EventsController@showCreateForm');
 Route::post('event/create', 'EventsController@createEvent');
 
+/*
+ * Contact
+ */
 Route::get('contact', function () {
     return view('contact');
 });
 
-
+/*
+ * Ideas box
+ */
 Route::get('idees', 'ActivitiesController@showActivities');
-Route::post('idees', 'ActivitiesController@createActivity');
+Route::post('idees/create', 'ActivitiesController@createActivity');
 
-
+/*
+ * Personal space
+ */
 Route::get('personnel', function () {
     return view('personnel');
 });
 
-
+/*
+ * Basket
+ */
 Route::get('panier', function () {
     return view('panier');
 });

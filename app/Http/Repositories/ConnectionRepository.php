@@ -16,7 +16,7 @@ class ConnectionRepository {
     public static function getConnection($login, $password)
     {
         $client = ApiRepository::getClient();
-        $res = json_decode((($client->request('GET', 'users'))->getBody()), true);
+        $res = json_decode((($client->request('GET', 'users?precision=max'))->getBody()), true);
         if (ConnectionRepository::hasErrors($res) || count($res["result"]) == 0)
         {
             return null;
@@ -55,11 +55,13 @@ class ConnectionRepository {
          */
         $ranks = json_decode((($client->request('GET', 'ranks'))->getBody()), true)["result"];
         $rankId = 0;
+        $rankLevel = 0;
         foreach ($ranks as $r)
         {
             if ($r["ranks:rank"] == "student")
             {
                 $rankId = $r["ranks:id_rank"];
+                $rankLevel = $r["ranks:level"];
                 break;
             }
         }
@@ -120,7 +122,8 @@ class ConnectionRepository {
                     "id_user" => $userId,
                     "token" => $token,
                     "id_campus" => $campusId,
-                    "id_rank" => $rankId
+                    "id_rank" => $rankId,
+                    "rank_level" => $rankLevel
                 ];
             }
         }

@@ -26,6 +26,38 @@ class EventsRepository
         }
     }
 
+    public static function createEvent($name, $description, $date, $price, $location)
+    {
+        $client = ApiRepository::getClient();
+        try
+        {
+            $url = "manifestations";
+            $event = json_decode((($client->request('POST', $url, [
+                "json" => [
+                    "values" => [
+                        "event_name" => $name,
+                        "event_description" => $description,
+                        "event_price" => $price,
+                        "event_date" => $date,
+                        "event_location" => $location,
+                        "id_state" => 1,
+                    ]
+                ]
+            ]))->getBody()), true);
+            if (!isset($event["error"]))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }catch (ConnectException | ClientException $e)
+        {
+            return true;
+        }
+    }
+
     public static function filterByDate($events, $filter, $limit)
     {
         $filteredEvents = [];

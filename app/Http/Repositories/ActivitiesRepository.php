@@ -26,6 +26,37 @@ class ActivitiesRepository
         }
     }
 
+    public static function createActivity($name, $description, $id_event, $id_user)
+    {
+        $client = ApiRepository::getClient();
+        try
+        {
+            $url = "activities";
+            $activities = json_decode((($client->request('POST', $url, [
+                "json" => [
+                    "values" => [
+                        "activity_name" => $name,
+                        "activity_description" => $description,
+                        "id_user" => $id_user,
+                        "id_event" => $id_event,
+                        "id_state" => 3,
+                    ]
+                ]
+            ]))->getBody()), true);
+            if (!isset($activities["error"]))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }catch (ConnectException | ClientException $e)
+        {
+            return true;
+        }
+    }
+
     private static function filterActivities($activities)
     {
         $filteredActivities =  [];

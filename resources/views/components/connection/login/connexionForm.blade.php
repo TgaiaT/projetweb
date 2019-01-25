@@ -5,7 +5,7 @@
 
 			{!!Form::open(['url' => 'connexion'])!!}
 					<div class="form-group row {!! $errors->has('email') ? 'has-error' : '' !!}">
-						{!!Form::label('email', 'Email', ['class' => 'col-sm-2 col-form-label'])!!}
+						{!!Form::label('email', 'Email', ['class' => 'col-sm-2 col-form-label text-left'])!!}
 						<div class="col-sm-10">
 							{!!Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Votre adresse email'])!!}
 							{!! $errors->first('email', '<small class="help-block">:message</small>') !!}
@@ -14,7 +14,7 @@
 
 
 					<div class="form-group {!! $errors->has('password') ? 'has-error' : '' !!} row">
-						{!!Form::label('password', 'Mot de passe', ['class' => 'col-sm-2 col-form-label'])!!}
+						{!!Form::label('password', 'Mot de passe', ['class' => 'col-sm-2 col-form-label text-left'])!!}
 						<div class="col-sm-10">
 							{!!Form::password('password', ['class' => 'form-control', 'placeholder' => 'Mot de passe'])!!}
 							{!! $errors->first('password', '<small class="help-block">:message</small>') !!}
@@ -44,7 +44,7 @@
     </div>
     <div class="row">
         <div class="col mx-auto text-right">
-            <a href="inscription">Inscription</a>
+            <a href="inscription">Pas encore de compte? Inscrivez-vous!</a>
         </div>
     </div>
 </div>

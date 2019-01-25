@@ -25,19 +25,6 @@ class ConnexionController extends Controller
 		return view('connexion');
 	}
 
-    public function getDisconnectionForm(Request $request)
-    {
-        if (!$request->session()->get("isConnected"))
-        {
-            return response()->view('deconnexion', [
-                "connectionStatus" => "not_loged"
-            ])->header("refresh", "2;url=/");
-        }
-        $request->session()->flush();
-        return redirect("/");
-
-    }
-
     public function getSigninForm(Request $request)
     {
         if ($request->session()->get("isConnected"))
@@ -70,6 +57,7 @@ class ConnexionController extends Controller
                     'email' => $result["users:email"],
                     'token' => $result["users:token"],
                     'rank' => $result["users:id_rank"],
+                    'rankLevel' => $result["ranks:level"],
                     'campus' => $result["users:id_campus"],
                 ]);
                 return response()->view('connexion', [
@@ -110,6 +98,7 @@ class ConnexionController extends Controller
                     'email' => $email,
                     'token' => $result["token"],
                     'rank' => $result["id_rank"],
+                    'rankLevel' => $result["rank_level"],
                     'campus' => $result["id_campus"],
                 ]);
                 return response()->view('inscription', [
@@ -128,6 +117,19 @@ class ConnexionController extends Controller
                 "connectionStatus" => "oops"
             ]);
         }
+    }
+
+    public function disconnect(Request $request)
+    {
+        if (!$request->session()->get("isConnected"))
+        {
+            return response()->view('deconnexion', [
+                "connectionStatus" => "not_loged"
+            ])->header("refresh", "2;url=/");
+        }
+        $request->session()->flush();
+        return redirect("/");
+
     }
 
 

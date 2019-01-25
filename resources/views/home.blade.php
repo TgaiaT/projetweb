@@ -1,25 +1,30 @@
 @extends('pages.basic')
 
-
 @section('head')
-	@parent
-	@include('pages.base')
-	@include('css.home')
+    @parent
+    @include('pages.base')
+    @include('css.home')
 @endsection
 
 @section('header')
-	@include('headers.header')
+    @include('headers.header')
 @endsection
 
 @section('contents')
-    @include('components.products.products')
+    <h1 class="titre">BDE Cesi Nancy</h1>
+    @include('components.presentation')
+    @include('components.social')
+    @include('components.eventPresentation')
+    @include('components.memoriesPresentation')
+    {{-- boite a idée présentation --}}
+    {{-- boutique présentation --}}
 @endsection
 
 @section('footer')
-	    @include('footers.footer')
+    @include('footers.footer')
 @endsection
 
 @section('scripts')
-	@include('js.home')
-	@parent
+    @include('js.home')
+    @parent
 @endsection

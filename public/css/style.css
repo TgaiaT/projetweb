@@ -1,24 +1,168 @@
-.logo{
-    max-width: 64px;
-    max-height: 64px;
-    transition: opacity 0.5s;
+*
+{
+	
 }
 
-.cardImage{
-    max-height: 256px;
-    max-height: 256px;
+header
+{
+	text-align: left;
+	padding-bottom: 15px;
 }
 
-.logo:hover{
-    opacity: 0.50;
+.navbar-item:hover
+{
+	background-color: #4678A1;
+	border-top-style: solid;
+	border-top-color: white;
 }
 
-.footer{
-    background-color: steelblue;
-    display: inline-block;
+.navbar-nav > li{
+  padding-left:10px;
+  padding-right:10px;
 }
 
-.copyright{
-    max-height: 32px;
-    max-width: 32px;
+.navbar-item
+{
+	border-top-style: solid;
+	border-top-color: #326295;
+}
+
+.headNav
+{
+	background-color: #326295;
+}
+
+#user-panier
+{
+	float: left;
+}
+
+#logo
+{
+	width: 15%;
+	height: 15%;
+	margin-left:15%; 
+}
+
+.submenu
+{
+	/*On les affiche dans script.js si l'écran est assez grand ou si le menu dérroullant est dérroullé*/
+	display: none;
+}
+
+#menu
+{
+	margin-left: 10%;
+}
+
+#menuTop
+{
+	color: white;
+}
+
+body
+{
+	text-align: center;
+	overflow-x: hidden;
+}
+
+main
+{
+	text-align: center;
+}
+
+.conteneur
+{
+	/*La case grise contenant les articles*/
+	background-color: #E5E5E5;
+	margin: auto;
+	margin-top: 20px;
+	padding: 8px;
+	max-width: 90%;
+}
+
+article
+{
+	/*Les box contenant les articles. Elles sont dans les conteneurs générallement*/
+	padding: 9px;
+	box-shadow: 5px 5px 2px black;
+	overflow-x: hidden;
+	background-color: white;
+	max-width: 90%;
+	margin: auto;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	text-align: left;
+}
+
+.explain
+{
+	/*les articles devant ressortir du lot ont la class explain*/
+	border-left-style: solid;
+	border-left-color: #326295;
+}
+
+a:link
+{
+	text-decoration: underline dotted #326295;
+	color: #4678A1;
+}
+
+a:link:hover
+{
+	text-decoration: underline dotted #4678A1;
+	color: #326295;
+}
+
+#presentation
+{
+	margin-bottom: 15px;
+}
+
+#carouselPresentation
+{
+	margin: auto;
+}
+
+.socialList .socialLink
+{
+	display: inline;
+	list-style-type: none;
+}
+
+.titre
+{
+	text-align: left;
+	margin-left: 12%;
+	font-weight: bold;
+	/*Titre de page (tout en haut sur fond blanc: h1 class="titre"
+	 *Titre de section (en haut d'un conteneur a fond gris) : h3 class="titre"
+	 *Titre d'article (carré blanc a ombres avec ou sans class explain) : h5 class="titre"
+	 */
+}
+
+.souligne
+{
+	text-decoration: underline;
+}
+
+.prix
+{
+	font-weight: bold;
+}
+
+.cote
+{
+	display: inline;
+}
+
+.cadre
+{
+	padding: 3px;
+}
+
+.cadrePleins
+{
+	padding: 3px;
+	background-color: #E5E5E5;
 }
