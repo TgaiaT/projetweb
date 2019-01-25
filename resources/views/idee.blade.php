@@ -1,6 +1,3 @@
-<?php
-echo "la belle";
-?>
 
 {{--
 @extends('pages.basic')

@@ -1,5 +1,6 @@
 <div id="memories">
   <div class="conteneur">
+    {{-- Surrement a rediviser en include pour les boucle PHP --}}
 
     <article>
       <div class="cadre">
@@ -25,7 +26,7 @@
           </button>
         </div>
         <div class="collapse" id="collapse">
-          <div class="card card-body">
+          <div class="card conteneur card-body">
             {{--A RECREER EN BOUCLE EN PHP --}}
 
               {{-- CAS 1 : évenement a venir --}}
@@ -56,7 +57,7 @@
               {{-- CAS 2 : event passé --}}
                 <div class="row">
 
-                  <article class="cadrePleins col-sm-12 col-md-5 col-lg-5 col-xl-3">
+                  <article class="cadre col-sm-12 col-md-5 col-lg-5 col-xl-3">
                     <img src="http://localhost/projetweb/resources/assets/Images/bde.jpg" alt="imageEvent" class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 row">
                       <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
@@ -74,19 +75,56 @@
                         <a href=""><i class="far fa-heart fa-2x"></i></a> XXX
                       </div>
                       <button type="button" class="btn btn-link col-sm-6 col-md-6 col-lg-6 col-xl-6" data-toggle="collapse" data-target="#collapsePhoto" aria-expanded="false" aria-controls="collapsePhoto">
-                        <a href="{{-- le lien pour commenter --}}"><i class="far fa-comment fa-2x"></i></a>
+                        <a href="le lien pour commenter"><i class="far fa-comment fa-2x"></i></a>
                         @php
                           /*echo le nombre de commentaires*/
                         @endphp
                         XXX
                       </button>
                     </div>
-                    <div class="collapse" id="collapsePhoto">
-                      <div class="card card-body">
-                        
+                    {{-- <div class="collapse" id="collapsePhoto">
+                      <div class="card conteneur card-body">
+                        <-- Boucle php j'imagine: -->
+
+                        <article class="comments">
+                          <p class="souligne">
+                            NOM DU GUGUS QUI COMMENTE :
+                          </p>
+                          <p>
+                            ceci est un super commentaires sous une super photo!
+                          </p>
+                        </article>
+
+                        <article class="comments">
+                          <p class="souligne">
+                            hater lambda :
+                          </p>
+                          <p>
+                            Moi je l'aime pas du tout! FDP delette ca imédiatement!
+                          </p>
+                        </article>
+
+                        <article class="comments">
+                          <p class="souligne">
+                            Censeur du Cesi :
+                          </p>
+                          <p>
+                            Votre demande de rendez-vous avec le directeur régional a été prise en compte monsieur hater lambda. Mardi 13h50. Cordialement.
+                          </p>
+                        </article>
+
+                        <article class="comments">
+                          <p class="souligne">
+                            Camarade de projet :
+                          </p>
+                          <p>
+                            R.E.K.T. x'D
+                          </p>
+                        </article>
+
                       </div>
                     </div>
-                  </article>
+                  </article> --}}
 
 
                 </div>
