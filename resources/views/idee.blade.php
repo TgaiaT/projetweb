@@ -13,7 +13,9 @@
 
 @section('contents')
 	@include('components.ideasPresentation')
+	@include('components.ideeForm')
 	@include('components.searchForm')
+	@include('components.ideeTemplate')
 
 @endsection
 

@@ -61,7 +61,7 @@
               {{-- CAS 2 : event passé             une boucle en php va généré un article pour chaque photo--}}
                 <div class="row cadre">
                   <div class="cadre col-sm-12 col-md-6 col-lg-6 col-xl-4">
-                    <article >
+                    <article> {{-- cette article est pour une photo postée --}}
                       <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
                         <img src="./images/bde.jpg" alt="imageEvent" class="img-fluid">
                       </div>
@@ -151,6 +151,193 @@
                         {{-- ___________fin collapse comments______________ --}}
 
                     </article>
+                  </div>
+
+                  <div class="cadre col-sm-12 col-md-6 col-lg-6 col-xl-4">  
+                    <article> {{-- cette article est pour une photo postée --}}
+                      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <img src="./images/bde.jpg" alt="imageEvent" class="img-fluid">
+                      </div>
+                      <div class="pleins col-sm-12 col-md-12 col-lg-12 col-xl-12 row">
+                        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                          @php /*Chaque photo peux etre liker par un uttilisateur*/
+                            /*
+                              if(a déja liker){
+                                echo '<a href="le lien du dislike"><i class="far fa-heart fa-2x"></i></a>';
+                              } else {
+                                echo '<a href="le lien du like"><i class="fas fa-heart fa-2x"></i></a>';
+                              }
+
+                              echo le nombre de like de la photo;
+                            */
+                          @endphp
+                          <a href=""><i class="far fa-heart fa-2x"></i></a> XXX
+                        </div>
+                        <button type="button" class="pleins btn btn-link col-sm-6 col-md-6 col-lg-6 col-xl-6" data-toggle="collapse" data-target="#collapsePhoto1{{-- id --}}" aria-expanded="false" aria-controls="collapsePhoto1{{-- id --}}">
+                          <i class="far fa-comment fa-2x"></i>
+                          @php
+                            /*echo le nombre de commentaires*/
+                          @endphp
+                          XXX
+                        </button>
+                        <div class="w-100"></div>
+                      </div>
+                        {{-- ________________collapse comments exemple:_______________ --}}
+                          <div class="collapse" id="collapsePhoto1{{-- id --}}">
+                            <div class="card conteneur card-body">
+                              <!-- Boucle php j'imagine: -->
+
+                              <article class="comments">
+                                <p class="souligne">
+                                  NOM DU GUGUS QUI COMMENTE :
+                                </p>
+                                <p>
+                                  ceci est un super commentaire sous une super photo!
+                                </p>
+                              </article>
+
+                              <article class="comments">
+                                <p class="souligne">
+                                  hater lambda :
+                                </p>
+                                <p>
+                                  Moi je l'aime pas du tout! FDP delete ca tt de suite!
+                                </p>
+                              </article>
+
+                              <article class="comments">
+                                <p class="souligne">
+                                  Censeur du Cesi :
+                                </p>
+                                <p>
+                                  Votre demande de rendez-vous avec le directeur régional a été prise en compte monsieur Hater Lambda. Mardi 13h50. Cordialement.
+                                </p>
+                              </article>
+
+                              <article class="comments">
+                                <p class="souligne">
+                                  Camarade de projet :
+                                </p>
+                                <p>
+                                  R.E.K.T. x'D
+                                </p>
+                              </article>
+                              <div class="cadre">
+                                <form method="POST" action="{{-- A RENTREZ ICI --}}" accept-charset="UTF-8"><input name="_token" type="hidden" value="{{-- bpQ7vlXxenwdnr6YPpzYY1C97Lbw2ii53U9Xk77h --}}">
+                                  <div>
+                                    <div class=" cadre form-group row ">
+                                      <div class="cadre">
+                                        <input class="form-control" placeholder="Votre commentaire" name="comments" type="text" id="comments1{{-- id --}}"> 
+                                      </div>
+                                    </div>
+                                    <div class="form-group row text-right">
+                                      <div class="col">
+                                        <input class="btn btn-primary" type="submit" value="Commenter">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                            
+                        {{-- ___________fin collapse comments______________ --}}
+
+                    </article>
+                  </div>
+
+                  <div class="cadre col-sm-12 col-md-6 col-lg-6 col-xl-4">
+                    <article> {{-- cette article est pour une photo postée --}}
+                      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <img src="./images/bde.jpg" alt="imageEvent" class="img-fluid">
+                      </div>
+                      <div class="pleins col-sm-12 col-md-12 col-lg-12 col-xl-12 row">
+                        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                          @php /*Chaque photo peux etre liker par un uttilisateur*/
+                            /*
+                              if(a déja liker){
+                                echo '<a href="le lien du dislike"><i class="far fa-heart fa-2x"></i></a>';
+                              } else {
+                                echo '<a href="le lien du like"><i class="fas fa-heart fa-2x"></i></a>';
+                              }
+
+                              echo le nombre de like de la photo;
+                            */
+                          @endphp
+                          <a href=""><i class="far fa-heart fa-2x"></i></a> XXX
+                        </div>
+                        <button type="button" class="pleins btn btn-link col-sm-6 col-md-6 col-lg-6 col-xl-6" data-toggle="collapse" data-target="#collapsePhoto1{{-- id --}}" aria-expanded="false" aria-controls="collapsePhoto1{{-- id --}}">
+                          <i class="far fa-comment fa-2x"></i>
+                          @php
+                            /*echo le nombre de commentaires*/
+                          @endphp
+                          XXX
+                        </button>
+                        <div class="w-100"></div>
+                      </div>
+                        {{-- ________________collapse comments exemple:_______________ --}}
+                          <div class="collapse" id="collapsePhoto1{{-- id --}}">
+                            <div class="card conteneur card-body">
+                              <!-- Boucle php j'imagine: -->
+
+                              <article class="comments">
+                                <p class="souligne">
+                                  NOM DU GUGUS QUI COMMENTE :
+                                </p>
+                                <p>
+                                  ceci est un super commentaire sous une super photo!
+                                </p>
+                              </article>
+
+                              <article class="comments">
+                                <p class="souligne">
+                                  hater lambda :
+                                </p>
+                                <p>
+                                  Moi je l'aime pas du tout! FDP delete ca tt de suite!
+                                </p>
+                              </article>
+
+                              <article class="comments">
+                                <p class="souligne">
+                                  Censeur du Cesi :
+                                </p>
+                                <p>
+                                  Votre demande de rendez-vous avec le directeur régional a été prise en compte monsieur Hater Lambda. Mardi 13h50. Cordialement.
+                                </p>
+                              </article>
+
+                              <article class="comments">
+                                <p class="souligne">
+                                  Camarade de projet :
+                                </p>
+                                <p>
+                                  R.E.K.T. x'D
+                                </p>
+                              </article>
+                              <div class="cadre">
+                                <form method="POST" action="{{-- A RENTREZ ICI --}}" accept-charset="UTF-8"><input name="_token" type="hidden" value="{{-- bpQ7vlXxenwdnr6YPpzYY1C97Lbw2ii53U9Xk77h --}}">
+                                  <div>
+                                    <div class=" cadre form-group row ">
+                                      <div class="cadre">
+                                        <input class="form-control" placeholder="Votre commentaire" name="comments" type="text" id="comments1{{-- id --}}"> 
+                                      </div>
+                                    </div>
+                                    <div class="form-group row text-right">
+                                      <div class="col">
+                                        <input class="btn btn-primary" type="submit" value="Commenter">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                            
+                        {{-- ___________fin collapse comments______________ --}}
+
+                    </article>
+
                   </div>
                 </div>
           </div>
