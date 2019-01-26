@@ -1,0 +1,265 @@
+*
+{
+	max-height: 100%;
+}
+
+header
+{
+	text-align: left;
+	padding-bottom: 15px;
+}
+
+.navbar-item:hover
+{
+	background-color: #4678A1;
+	border-top-style: solid;
+	border-top-color: white;
+}
+
+.navbar-nav > li{
+  padding-left:10px;
+  padding-right:10px;
+}
+
+.navbar-item
+{
+	border-top-style: solid;
+	border-top-color: #326295;
+}
+
+.headNav
+{
+	background-color: #326295;
+}
+
+#user-panier
+{
+	float: left;
+}
+
+#logo
+{
+	width: 15%;
+	height: 15%;
+	margin-left:15%; 
+}
+
+.submenu
+{
+	/*On les affiche dans script.js si l'écran est assez grand ou si le menu dérroullant est dérroullé*/
+	display: none;
+}
+
+#menu
+{
+	margin-left: 10%;
+}
+
+#menuTop
+{
+	color: white;
+}
+
+body
+{
+	text-align: center;
+	overflow-x: hidden;
+}
+
+main
+{
+	text-align: center;
+}
+
+.conteneur
+{
+	/*La case grise contenant les articles*/
+	background-color: #E5E5E5;
+	margin: auto;
+	margin-top: 20px;
+	padding: 8px;
+	max-width: 85%;
+}
+
+article
+{
+	/*Les box contenant les articles. Elles sont dans les conteneurs générallement*/
+	padding: 9px;
+	box-shadow: 5px 5px 2px black;
+	overflow-x: hidden;
+	background-color: white;
+	max-width: 95%;
+	margin: auto;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	text-align: left;
+}
+
+.explain
+{
+	/*les articles devant ressortir du lot ont la class explain*/
+	border-left-style: solid;
+	border-left-color: #326295;
+}
+
+a:link
+{
+	color: #4678A1;
+}
+
+a:link:hover
+{
+	color: #326295;
+}
+
+#presentation
+{
+	margin-bottom: 15px;
+}
+
+#carouselPresentation
+{
+	margin: auto;
+}
+
+.socialList .socialLink
+{
+	display: inline;
+	list-style-type: none;
+}
+
+.titre
+{
+	text-align: left;
+	margin-left: 12%;
+	font-weight: bold;
+	/*Titre de page (tout en haut sur fond blanc: h1 class="titre"
+	 *Titre de section (en haut d'un conteneur a fond gris) : h3 class="titre"
+	 *Titre d'article (carré blanc a ombres avec ou sans class explain) : h5 class="titre"
+	 */
+}
+
+.souligne
+{
+	text-decoration: underline;
+}
+
+.prix
+{
+	font-weight: bold;
+}
+
+.cote
+{
+	display: inline;
+}
+
+.cadre
+{
+	padding: 3px;
+}
+
+.pleins
+{
+	padding: 0;
+}
+
+.comments
+{
+	width:100%;
+}
+
+img 
+{
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+img:hover 
+{
+	opacity: 0.7;
+}
+
+/* The Modal (background) */
+.modal 
+{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image */
+.caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation */
+.modal-content, .caption {  
+	-webkit-animation-name: zoom;
+	-webkit-animation-duration: 0.6s;
+	animation-name: zoom;
+	animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover, .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+
+.close
+{
+	top:90px;
+}

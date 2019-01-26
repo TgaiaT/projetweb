@@ -8,7 +8,7 @@
           <h5 class="titre col-sm-5 col-md-5 col-lg-5 col-xl-5">Nom du dernier évenement passé</h5>
           <p class="date col-sm-5 col-md-5 col-lg-5 col-xl-5"> 03/24/2019 </p>  
           <div class="pleins col-sm-12 col-md-6 col-lg-4 col-xl-4">
-    				<img src="http://localhost/projetweb/resources/assets/Images/bde.jpg" alt="imageEvent" class="img-fluid">
+    				<img src="./images/bde.jpg" alt="imageEvent" class="img-fluid">
 				  </div>
 
           <div class="col-sm-12 col-md-5 col-lg-8 col-xl-8">
@@ -63,7 +63,7 @@
                   <div class="cadre col-sm-12 col-md-6 col-lg-6 col-xl-4">
                     <article >
                       <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                        <img src="http://localhost/projetweb/resources/assets/Images/bde.jpg" alt="imageEvent" class="img-fluid">
+                        <img src="./images/bde.jpg" alt="imageEvent" class="img-fluid">
                       </div>
                       <div class="pleins col-sm-12 col-md-12 col-lg-12 col-xl-12 row">
                         <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">

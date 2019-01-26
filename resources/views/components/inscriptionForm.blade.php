@@ -50,7 +50,7 @@
 	                </div>
 	            </div>
             </form>
-			<a href="http://localhost/projetweb/server.php/connexion" class="liens">Déjà inscrit? Connectez-vous!</a>
+			<a href="./connexion" class="liens">Déjà inscrit? Connectez-vous!</a>
 		</article>
 	</div>
 </div>

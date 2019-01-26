@@ -14,7 +14,7 @@
 				Vous allez ici pouvoir commander des produits. Une fois votre pannier remplis validez votre commande. Un membre du BDE devrait vous envoyer un mail sous peu afin de finalisé votre achat. Vérifiez donc votre boite de réception mail!
 			</p>
 			<p>Bientot ici: payez en ligne grace a PayPal.</p>
-			<a href="http://localhost/projetweb/server.php/pannier">Voir mon pannier...</a>
+			<a href="./pannier">Voir mon pannier...</a>
 		</article>
 	</div>
 </div>

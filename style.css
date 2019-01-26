@@ -1,0 +1,111 @@
+*
+{
+	font-family : "Trebuchet MS"; 
+	margin : 0;
+	text-align: center;
+}
+
+header
+{
+	display:block;
+	background-color: grey;
+	width: 100%;
+}
+
+.ombre
+{
+	text-shadow: 8px 8px 8px yellow;
+}
+
+.up nav ul
+{
+	display: inline;
+}
+
+nav ul li
+{
+	text-align: center;
+	background-color: yellow;
+}
+
+nav ul li:hover
+{
+	color : yellow;
+	background-color: black;
+}
+
+ul li
+{
+	list-style-type: none;
+}
+
+main
+{
+	margin-top: 50px;
+}
+
+.presentation
+{
+	width: 100%;
+	margin:auto;
+	
+}
+
+.carousel
+{
+	position: static;
+	overflow-x: hidden;
+	height : 53.92%;
+	overflow-x: hidden;
+}
+
+.carousel div div img
+{
+	height: 100%;
+	max-width: 100%;
+}
+
+.social
+{
+	width: 30%;
+	float:right;
+}
+
+
+.SocialMedia ul li a
+{
+	text-align: center;
+	text-decoration: none;
+	color : black;
+}
+
+.fa-facebook-square:hover
+{
+	color : #3b5998;
+}
+
+.fa-twitter-square:hover
+{
+	color : #33ccff;
+}
+
+.fa-instagram:hover
+{
+	color : #999;
+}
+
+.fa-youtube-square:hover
+{
+	color : #cc181e;
+}
+
+article p
+{
+	text-align: left;
+}
+
+.titre
+{
+	text-decoration: underline overline #FF3028;
+	font-weight: bold;
+}

@@ -32,7 +32,7 @@
 					</div>
 				</div>
 			</form>
-			<a href="http://localhost/projetweb/server.php/inscription" class="liens">Pas encore de compte? Inscrivez-vous!</a>
+			<a href="./inscription" class="liens">Pas encore de compte? Inscrivez-vous!</a>
 		</article>
 	</div>
 </div>
