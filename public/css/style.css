@@ -85,7 +85,7 @@ article
 {
 	/*Les box contenant les articles. Elles sont dans les conteneurs générallement*/
 	padding: 9px;
-	box-shadow: 5px 5px 2px black;
+	box-shadow: 5px 5px 2px grey;
 	overflow-x: hidden;
 	background-color: white;
 	max-width: 95%;

@@ -5,8 +5,8 @@
 		<div class="cadre col-sm-12 col-md-6 col-lg-6 col-xl-4">
 			<article class="produit">
 				<div class="row cadre">
-					<h5 class="titre col-sm-5 col-md-5 col-lg-5 col-xl-5">Nom du produit</h5>
-					<div class="adminDiv cote col-sm-5 col-md-5 col-lg-5 col-xl-5"> 
+					<h5 class="titre cadre">Nom du produit</h5>
+					<div> 
 						@include('components.fonctionAdmin'){{-- <-Arefaire au propre! --}}
 					</div>
 						{{-- A REPRENDRE DE LA BDD EN PHP --}}
