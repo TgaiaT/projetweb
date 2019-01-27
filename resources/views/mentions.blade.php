@@ -2,7 +2,7 @@
 
 @section('head')
 	@parent
-	@include('pages.base')
+	@include('pages.base', ['title' => 'Mentions légales BDE Exia Nancy'])
 	@include('css.home')
 @endsection
 

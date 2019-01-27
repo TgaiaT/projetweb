@@ -37,7 +37,7 @@
 
     {{-- Deuxieme barre du header qui n'affiche que le logo. cliquer sur le logo mene a la page d'index --}}
     <div class="headLogo" id="second-head">
-        <a href="./"><img id="logo" class="nonClickable" src="./images/logo.png" alt="logo"></a>
+        <a href="./"><img id="logo" class="nonClickable img-fluid" src="./images/logo.png" alt="logo"></a>
     </div>
 
     {{-- Troisieme et derniere barre du header bleu elle aussi elle contient un menu dérroullant menant aux différentes section du sites. Si l'écran est grand alors on cache le menu dérroullant. ca se passe dans script.js--}}

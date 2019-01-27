@@ -34,31 +34,43 @@
 
               {{-- CAS 1 : évenement a venir             juste un liste a faire en foreach contenant un bouton reste a faire la reponse du bouton en JS ou PHP--}}
 
-                {{-- <ul> 
+                <ul class="cadre row">
                   <li>
                     <p class="souligne">Titre de l'activité :</p>
-                    <div class="row">
-                      <p class="col-sm-8 col-md-8 col-lg-8 col-xl-8">Description de l'activité blabla bla blablabla blabla bla blablabla blabla bla blablabla blabla bla blablabla </p>
-                      <button type="button" class="btn btn-secondary col-sm-2 col-md-2 col-lg-2 col-xl-2">S'inscrire</button>
+                    <div class="cadre">
+                      <p class="pleins col-sm-12 col-md-7 col-lg-8 col-xl-8">Description de l'activité blabla bla blablabla blabla bla blablabla blabla bla blablabla blabla bla blablabla </p>
+                      <button type="button" class="pleins btn btn-secondary col-sm-4 col-md-2 col-lg-2 col-xl-2">S'inscrire</button>
                     </div>
                   </li>
                   <li>
                     <p class="souligne">Titre de l'activité :</p>
-                    <div class="row">
-                      <p class="col-sm-8 col-md-8 col-lg-8 col-xl-8">Description de l'activité blabla bla blablabla blabla bla blablabla blabla bla blablabla blabla bla blablabla </p>
-                      <button type="button" class="btn btn-secondary col-sm-2 col-md-2 col-lg-2 col-xl-2">S'inscrire</button>
+                    <div class="cadre ">
+                      <p class="col-sm-12 col-md-10 col-lg-8 col-xl-8">Description de l'activité blabla bla blablabla blabla bla blablabla blabla bla blablabla blabla bla blablabla </p>
+                      <button type="button" class="btn btn-secondary col-sm-4 col-md-3 col-lg-2 col-xl-2">S'inscrire</button>
                     </div>
                   </li>
                   <li>
                     <p class="souligne">Titre de l'activité :</p>
-                    <div class="row">
-                      <p class="col-sm-8 col-md-8 col-lg-8 col-xl-8">Description de l'activité blabla bla blablabla blabla bla blablabla blabla bla blablabla blabla bla blablabla </p>
-                      <button type="button" class="btn btn-secondary col-sm-2 col-md-2 col-lg-2 col-xl-2">S'inscrire</button>
+                    <div class="cadre ">
+                      <p class="col-sm-12 col-md-10 col-lg-8 col-xl-8">Description de l'activité blabla bla blablabla blabla bla blablabla blabla bla blablabla blabla bla blablabla </p>
+                      <button type="button" class="btn btn-secondary col-sm-4 col-md-3 col-lg-2 col-xl-2">S'inscrire</button>
                     </div>
                   </li>
-                <ul> --}}
+                <ul>
 
               {{-- CAS 2 : event passé             une boucle en php va généré un article pour chaque photo--}}
+                <!-- <div>
+                  <form method="POST" action="{{-- A RENTREZ ICI --}}" accept-charset="UTF-8"><input name="_token" type="hidden" value="{{-- bpQ7vlXxenwdnr6YPpzYYs1C97Lbw2ii53U9Xk77h --}}">
+                    <div class="cadre">
+                      <div class="main form-group row cadre">
+                        <label for="email" class="formPlace col-sm-10 col-md-4 col-lg-3 col-xl-3 col-form-label">Poster une photo: </label>
+                        <input class="formPlace form-control col-sm-10 col-md-5 col-lg-7 col-xl-7" placeholder="Lien de la photo" name="imgUrl" type="link" id="imgUrl"> 
+                        <input class="formPlace btn btn-primary col-sm-10 col-md-2 col-lg-1 col-xl-1" type="submit" value="Poster">
+                        <div class="w-100"></div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
                 <div class="row cadre">
                   <div class="cadre col-sm-12 col-md-6 col-lg-6 col-xl-4">
                     <article> {{-- cette article est pour une photo postée --}}
@@ -66,7 +78,7 @@
                         <img src="./images/bde.jpg" alt="imageEvent" class="img-fluid">
                       </div>
                       <div class="pleins col-sm-12 col-md-12 col-lg-12 col-xl-12 row">
-                        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                        <div class="main col-sm-6 col-md-6 col-lg-6 col-xl-6">
                           @php /*Chaque photo peux etre liker par un uttilisateur*/
                             /*
                               if(a déja liker){
@@ -91,8 +103,7 @@
                       </div>
                         {{-- ________________collapse comments exemple:_______________ --}}
                           <div class="collapse" id="collapsePhoto1{{-- id --}}">
-                            <div class="card conteneur card-body">
-                              <!-- Boucle php j'imagine: -->
+                            <div class="card conteneur card-body"
 
                               <article class="comments">
                                 <p class="souligne">
@@ -129,6 +140,8 @@
                                   R.E.K.T. x'D
                                 </p>
                               </article>
+
+                              {{-- Poster un commenataire --}}
                               <div class="cadre">
                                 <form method="POST" action="{{-- A RENTREZ ICI --}}" accept-charset="UTF-8"><input name="_token" type="hidden" value="{{-- bpQ7vlXxenwdnr6YPpzYY1C97Lbw2ii53U9Xk77h --}}">
                                   <div>
@@ -152,7 +165,7 @@
 
                     </article>
                   </div>
-
+                    -->
                 </div>
           </div>
         </div>

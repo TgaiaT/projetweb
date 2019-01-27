@@ -6,11 +6,13 @@ $(function(){ /*Si le DOM est bien chargé alors:*/
 			$('.submenu').css('display', 'none');
 			$('#logo').css('width','60%');
 			$('#logo').css('height','60%');
+			$('.effacable').hide();
 		} else {/*Sinon on cache le menu dérroullant, on affiche la navbar et le logo prend ca taille habituelle*/
 			$('#buttonMenu').hide();
 			$('.submenu').css('display', 'block');
 			$('#logo').css('width','15%');
 			$('#logo').css('height','15%');
+			$('.effacable').show();
 		}
 	}
 

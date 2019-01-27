@@ -2,7 +2,7 @@
 
 @section('head')
 	@parent
-	@include('pages.base')
+	@include('pages.base', ['title' => 'Inscription BDE Exia Nancy'])
 	@include('home.css')
 @endsection
 

@@ -1,9 +1,8 @@
-
 @extends('pages.basic')
 
 @section('head')
 	@parent
-	@include('pages.base')
+	@include('pages.base', ['title' => 'Boite à idées BDE Exia Nancy'])
 	@include('css.home')
 @endsection
 

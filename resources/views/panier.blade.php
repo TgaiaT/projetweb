@@ -2,7 +2,7 @@
 
 @section('head')
 	@parent
-	@include('pages.base')
+	@include('pages.base', ['title' => 'pannier BDE Exia Nancy'])
 	@include('css.home')
 @endsection
 

@@ -2,7 +2,7 @@
 
 @section('head')
 	@parent
-	@include('pages.base')
+	@include('pages.base', ['title' => 'Contact BDE Exia Nancy'])
 	@include('css.home')
 @endsection
 
@@ -13,7 +13,7 @@
 @section('contents')
 	<h1 class='titre'>Contact</h1>
 	@include('components.social')
-
+	@include('components.contactPage')
 @endsection
 
 @section('footer')
