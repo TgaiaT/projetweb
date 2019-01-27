@@ -1,6 +1,6 @@
 *
 {
-	
+	max-height: 100%;
 }
 
 header
@@ -17,8 +17,8 @@ header
 }
 
 .navbar-nav > li{
-  padding-left:10px;
-  padding-right:10px;
+  	padding-left:10px;
+  	padding-right:10px;
 }
 
 .navbar-item
@@ -66,7 +66,7 @@ body
 	overflow-x: hidden;
 }
 
-main
+.main
 {
 	text-align: center;
 }
@@ -78,17 +78,17 @@ main
 	margin: auto;
 	margin-top: 20px;
 	padding: 8px;
-	max-width: 90%;
+	max-width: 85%;
 }
 
 article
 {
 	/*Les box contenant les articles. Elles sont dans les conteneurs générallement*/
 	padding: 9px;
-	box-shadow: 5px 5px 2px black;
+	box-shadow: 5px 5px 2px grey;
 	overflow-x: hidden;
 	background-color: white;
-	max-width: 90%;
+	max-width: 95%;
 	margin: auto;
 	margin-top: 15px;
 	margin-bottom: 15px;
@@ -104,13 +104,11 @@ article
 
 a:link
 {
-	text-decoration: underline dotted #326295;
 	color: #4678A1;
 }
 
 a:link:hover
 {
-	text-decoration: underline dotted #4678A1;
 	color: #326295;
 }
 
@@ -124,7 +122,7 @@ a:link:hover
 	margin: auto;
 }
 
-.socialList .socialLink
+ul li
 {
 	display: inline;
 	list-style-type: none;
@@ -136,9 +134,9 @@ a:link:hover
 	margin-left: 12%;
 	font-weight: bold;
 	/*Titre de page (tout en haut sur fond blanc: h1 class="titre"
-	 *Titre de section (en haut d'un conteneur a fond gris) : h3 class="titre"
-	 *Titre d'article (carré blanc a ombres avec ou sans class explain) : h5 class="titre"
-	 */
+	*Titre de section (en haut d'un conteneur a fond gris) : h3 class="titre"
+	*Titre d'article (carré blanc a ombres avec ou sans class explain) : h5 class="titre"
+	*/
 }
 
 .souligne
@@ -158,11 +156,128 @@ a:link:hover
 
 .cadre
 {
-	padding: 3px;
+	padding: 5px;
 }
 
-.cadrePleins
+.pleins
 {
-	padding: 3px;
-	background-color: #E5E5E5;
+	padding: 0;
+}
+
+.comments
+{
+	width:100%;
+}
+
+img 
+{
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+img:hover 
+{
+	opacity: 0.7;
+}
+
+/* The Modal (background) */
+.modal 
+{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image */
+.caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation */
+.modal-content, .caption {  
+	-webkit-animation-name: zoom;
+	-webkit-animation-duration: 0.6s;
+	animation-name: zoom;
+	animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover, .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+
+.close
+{
+	top:90px;
+}
+
+.formPlace
+{
+	padding: 0;
+}
+
+iframe
+{
+	max-width: 100%;
+}
+
+#scrollUp
+{
+	position: fixed;
+	bottom : 10px;
+	right: -100px;
+	opacity: 0.5;
 }

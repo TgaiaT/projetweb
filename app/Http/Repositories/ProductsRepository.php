@@ -232,4 +232,255 @@ class ProductsRepository
         return $countedProducts;
     }
 
+    public static function createProduct($name, $picture, $description, $price, $categories)
+    {
+        $client = ApiRepository::getClient();
+        try
+        {
+            /*
+             * Create the product
+             */
+            $url = "products";
+            $res = json_decode((($client->request('POST', $url, [
+                "json" => [
+                    "values" => [
+                        "product_name" => $name,
+                        "product_picture" => $picture,
+                        "product_description" => $description,
+                        "product_price" => $price,
+                        "id_state" => 5,
+                    ]
+                ]
+            ]))->getBody()), true);
+            if (isset($res["error"])) return true;
+
+            /*
+             * Get the created product ID
+             */
+            $res = json_decode((($client->request('GET', "products"))->getBody()), true)["result"];
+            $idProduct = "";
+            foreach ($res as $product)
+            {
+                if ($product["products:product_name"] == $name && $product["products:product_description"] == $description && $product["products:product_price"] == $price)
+                {
+                    $idProduct = $product["products:id_product"];
+                }
+            }
+            if ($idProduct == "") return true;
+
+            $url = "based";
+            $res = json_decode((($client->request('POST', $url, [
+                "json" => [
+                    "values" => [
+                        "id_campus" => 5,
+                        "id_product" => $idProduct,
+                    ]
+                ]
+            ]))->getBody()), true)["error"];
+            if (isset($res["error"])) return true;
+
+            if (isset($categories))
+            {
+                foreach ($categories as $category)
+                {
+                    $res = ProductsRepository::addCategory($category, $idProduct);
+                    if ($res) return true;
+                }
+            }
+
+            if (!isset($res["error"]))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }catch (ConnectException | ClientException $e)
+        {
+            return true;
+        }
+    }
+
+    public static function createCategory($name)
+    {
+        $client = ApiRepository::getClient();
+        try
+        {
+            $url = "categories";
+            $activities = json_decode((($client->request('POST', $url, [
+                "json" => [
+                    "values" => [
+                        "category_name" => $name,
+                    ]
+                ]
+            ]))->getBody()), true);
+            if (!isset($activities["error"]))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }catch (ConnectException | ClientException $e)
+        {
+            return true;
+        }
+    }
+
+    public static function addCategory($category, $id_product)
+    {
+        $client = ApiRepository::getClient();
+        try
+        {
+            $url = "fit";
+            $activities = json_decode((($client->request('POST', $url, [
+                "json" => [
+                    "values" => [
+                        "id_category" => $category,
+                        "id_product" => $id_product,
+                    ]
+                ]
+            ]))->getBody()), true);
+            if (!isset($activities["error"]))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }catch (ConnectException | ClientException $e)
+        {
+            return true;
+        }
+    }
+
+    public static function ban($id_product, $ban)
+    {
+        $client = ApiRepository::getClient();
+        try
+        {
+            $url = "products/" . $id_product;
+            if ($ban)
+            {
+                $res = json_decode((($client->request('PUT', $url, [
+                    "json" => [
+                        "values" => [
+                            "id_state" => 2
+                        ]
+                    ]
+                ]))->getBody()), true);
+            }
+            else
+            {
+                $res = json_decode((($client->request('PUT', $url, [
+                    "json" => [
+                        "values" => [
+                            "id_state" => 3
+                        ]
+                    ]
+                ]))->getBody()), true);
+            }
+
+            if (!isset($res["error"]))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }catch (ConnectException | ClientException $e)
+        {
+            return true;
+        }
+    }
+
+    public static function command($id_user, $id_product, $quantity)
+    {
+        $client = ApiRepository::getClient();
+        try
+        {
+            $time = time();
+            $url = "commands";
+            $res = json_decode((($client->request('POST', $url, [
+                "json" => [
+                    "values" => [
+                        "id_user" => $id_user,
+                        "command_time" => $time,
+                    ]
+                ]
+            ]))->getBody()), true);
+            if (isset($res["error"])) return true;
+
+            /*
+             * Get the command ID
+             */
+            $url = "commands";
+            $res = json_decode((($client->request('GET', $url))->getBody()), true)["result"];
+            $id_command = 0;
+            foreach ($res as $command)
+            {
+                if ($command["commands:command_time"] == $time)
+                {
+                    $id_command = $command["commands:id_command"];
+                }
+            }
+            if (!isset($id_command)) return true;
+
+            $url = "contain";
+            $res = json_decode((($client->request('POST', $url, [
+                "json" => [
+                    "values" => [
+                        "id_command" => $id_command,
+                        "id_product" => $id_product,
+                        "quantity" => $quantity,
+                    ]
+                ]
+            ]))->getBody()), true);
+
+            if (!isset($res["error"]))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }catch (ConnectException | ClientException $e)
+        {
+            return  true;
+        }
+    }
+
+    public static function getCategories()
+    {
+        $client = ApiRepository::getClient();
+        try
+        {
+            $url = "categories";
+            $categories = json_decode((($client->request('GET', $url))->getBody()), true);
+
+            if (!isset($categories["error"]))
+            {
+                $filteredActivity = [];
+                foreach ($categories["result"] as $category)
+                {
+                    $filteredActivity[$category["categories:id_category"]]["name"] = $category["categories:category_name"];
+                    $filteredActivity[$category["categories:id_category"]]["id"] = $category["categories:id_category"];
+                }
+                return $filteredActivity;
+            }
+            else
+            {
+                return null;
+            }
+        }catch (ConnectException | ClientException $e)
+        {
+            return null;
+        }
+    }
+
 }

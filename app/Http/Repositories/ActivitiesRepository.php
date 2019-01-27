@@ -57,6 +57,151 @@ class ActivitiesRepository
         }
     }
 
+    public static function updateActivity($id_activity, $id_event)
+    {
+        $client = ApiRepository::getClient();
+        try
+        {
+            $url = "activities/" . $id_activity;
+            $activities = json_decode((($client->request('PUT', $url, [
+                "json" => [
+                    "values" => [
+                        "id_event" => $id_event,
+                        "id_state" => 1
+                    ]
+                ]
+            ]))->getBody()), true);
+            if (!isset($activities["error"]))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }catch (ConnectException | ClientException $e)
+        {
+            return true;
+        }
+    }
+
+    public static function ban($id_activity, $ban)
+    {
+        $client = ApiRepository::getClient();
+        try
+        {
+            $url = "activities/" . $id_activity;
+            if ($ban)
+            {
+                $activities = json_decode((($client->request('PUT', $url, [
+                    "json" => [
+                        "values" => [
+                            "id_state" => 2
+                        ]
+                    ]
+                ]))->getBody()), true);
+            }
+            else
+            {
+                $activities = json_decode((($client->request('PUT', $url, [
+                    "json" => [
+                        "values" => [
+                            "id_state" => 3
+                        ]
+                    ]
+                ]))->getBody()), true);
+            }
+
+            if (!isset($activities["error"]))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }catch (ConnectException | ClientException $e)
+        {
+            return true;
+        }
+    }
+
+    public static function vote($id_user, $id_activity, $add)
+    {
+        $client = ApiRepository::getClient();
+        try
+        {
+
+            if ($add)
+            {
+                $url = "vote";
+                $activities = json_decode((($client->request('POST', $url, [
+                    "json" => [
+                        "values" => [
+                            "id_activity" => $id_activity,
+                            "id_user" => $id_user
+                        ]
+                    ]
+                ]))->getBody()), true);
+            }
+            else
+            {
+                $url = "vote/" . $id_activity . "/" . $id_user;
+                $activities = json_decode((($client->request('DELETE', $url))->getBody()), true);
+            }
+
+            if (!isset($activities["error"]))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }catch (ConnectException | ClientException $e)
+        {
+            return true;
+        }
+    }
+
+    public static function register($id_user, $id_activity, $register)
+    {
+        $client = ApiRepository::getClient();
+        try
+        {
+
+            if ($register)
+            {
+                $url = "signin";
+                $activities = json_decode((($client->request('POST', $url, [
+                    "json" => [
+                        "values" => [
+                            "id_activity" => $id_activity,
+                            "id_user" => $id_user
+                        ]
+                    ]
+                ]))->getBody()), true);
+            }
+            else
+            {
+                $url = "signin/" . $id_activity . "/" . $id_user;
+                $activities = json_decode((($client->request('DELETE', $url))->getBody()), true);
+            }
+
+            if (!isset($activities["error"]))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }catch (ConnectException | ClientException $e)
+        {
+            return true;
+        }
+    }
+
     private static function filterActivities($activities)
     {
         $filteredActivities =  [];
@@ -74,13 +219,13 @@ class ActivitiesRepository
         return $filteredActivities;
     }
 
-    private static function getVoters($activities)
+    public static function getVoters($activities)
     {
         $client = ApiRepository::getClient();
         $filteredActivities = [];
         foreach ($activities as $activity)
         {
-            $url = "activities/" . $activity["id"] . "?&getVoters=true";
+            $url = "activities/" . $activity["id"] . "?getVoters=true";
             $voters = json_decode((($client->request('GET', $url))->getBody()), true)["result"];
             $activity["voters"] = [];
             foreach ($voters as $voter)
@@ -92,13 +237,13 @@ class ActivitiesRepository
         return $filteredActivities;
     }
 
-    private static function getRegistered($activities)
+    public static function getRegistered($activities)
     {
         $client = ApiRepository::getClient();
         $filteredActivities = [];
         foreach ($activities as $activity)
         {
-            $url = "activities/" . $activity["id"] . "?&getRegistered=true";
+            $url = "activities/" . $activity["id"] . "?getRegistered=true";
             $registered = json_decode((($client->request('GET', $url))->getBody()), true)["result"];
             $activity["registered"] = [];
             foreach ($registered as $register)

@@ -14,27 +14,22 @@
                     }
                 @endphp
             </li>
+            {{-- Basket --}}
             <li class="navbar-item" id="user-panier">
-                @php
-                    /*Affichage du pannier si l'uttilisateur est connecté*/
-                    if (session()->get("isConnected")){
-                        /*Si l'uttilisateur a deja un pannier on le reprend sinon on lui dit qu'il est vide*/
-                        if(session()->get("panier")){
-                            echo '<a href="/panier" class="nav-link">Pannier:'.session()->get("panier")["price"].' €   <i class="fas fa-shopping-basket"></i></a>';
-                        } else {
-                            echo '<a href="/panier" class="nav-link">Panier: 00.00 €   <i class="fas fa-shopping-basket"></i></a>';
-                        }
-                    } else {
-                        echo '<a href="/panier" class="nav-link">Panier:  00.00 €   <i class="fas fa-shopping-basket"></i></a>';
-                    }
-                @endphp
+                @if (session()->get("isConnected"))
+                    @if(isset(session()->get("basket")[0]))
+                        <a href="/panier" class="nav-link">Pannier: {{session()->get("basketValue")}}€<i class="fas fa-shopping-basket"></i></a>
+                    @else
+                        <a href="/panier" class="nav-link">Panier: 00.00 €<i class="fas fa-shopping-basket"></i></a>
+                    @endif
+                @endif
             </li>
         </ul>
     </nav>
 
     {{-- Deuxieme barre du header qui n'affiche que le logo. cliquer sur le logo mene a la page d'index --}}
     <div class="headLogo" id="second-head">
-        <a href="/"><img id="logo" src="/images/Logo.png" alt="logo"></a>
+        <a href="/"><img id="logo" class="nonClickable" src="/images/Logo.png" alt="logo"></a>
     </div>
 
     {{-- Troisieme et derniere barre du header bleu elle aussi elle contient un menu dérroullant menant aux différentes section du sites. Si l'écran est grand alors on cache le menu dérroullant. ca se passe dans script.js--}}
@@ -55,4 +50,12 @@
             </li>
         </ul>
     </nav>
+    <div id="myModal" class="modal">
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+        <span class="close">&times;</span>
+    </div>
+    <div id="scrollUp">
+        <i class="fas fa-angle-double-up fa-5x"></i>
+    </div>
 </header>

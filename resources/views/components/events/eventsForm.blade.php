@@ -45,6 +45,14 @@
                 </div>
             </div>
 
+            <div class="form-group {!! $errors->has('image') ? 'has-error' : '' !!} row">
+                {!!Form::label('image', "Lien de l'image", ['class' => 'col-sm-2 col-form-label text-left'])!!}
+                <div class="col-sm-10">
+                    {!!Form::text('image', null, ['class' => 'form-control', 'placeholder' => '(Optionnel)'])!!}
+                    {!! $errors->first('image', '<small class="help-block">:message</small>') !!}
+                </div>
+            </div>
+
             <div class="form-group row text-right">
                 <div class="col">
                     {!!Form::submit("Créer l'événement", ['class' => 'btn btn-primary'])!!}

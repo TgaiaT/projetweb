@@ -80,4 +80,45 @@ class PicturesRepository
         }
         return $filteredPictures;
     }
+
+    public static function ban($id_picture, $ban)
+    {
+        $client = ApiRepository::getClient();
+        try
+        {
+            $url = "pictures/" . $id_picture;
+            if ($ban)
+            {
+                $res = json_decode((($client->request('PUT', $url, [
+                    "json" => [
+                        "values" => [
+                            "id_state" => 2
+                        ]
+                    ]
+                ]))->getBody()), true);
+            }
+            else
+            {
+                $res = json_decode((($client->request('PUT', $url, [
+                    "json" => [
+                        "values" => [
+                            "id_state" => 3
+                        ]
+                    ]
+                ]))->getBody()), true);
+            }
+
+            if (!isset($res["error"]))
+            {
+                return false;
+            }
+            else
+            {
+                return $res["error"];
+            }
+        }catch (ConnectException | ClientException $e)
+        {
+            return true;
+        }
+    }
 }

@@ -2,7 +2,7 @@
 
 @section('head')
     @parent
-    @include('pages.base')
+    @include('pages.base', ['title' => 'Boutique BDE Exia Nancy'])
     @include('css.home')
 @endsection
 
@@ -11,15 +11,47 @@
 @endsection
 
 @section('contents')
-    @include('components.boutiquePresentation')
-    {{--@php
-        if(isset($_GET['search']) || isset(isset($_GET['tri']) || isset(isset($_GET['plancher']) || isset(isset($_GET['plafond']) || isset(isset($_GET['catégorie']) ){
-            //GENERER LA PAGE RECHERCHE
-        } else {
-            @include('components.boutiqueVitrine')
-        }
-    @endphp --}}
-    @include('components.boutiqueVitrine')
+    <h2 class="titre">Boutique</h2>
+    {{--
+        Product creation button
+    --}}
+    @if(isset(session()->all()["user"]["rankLevel"]) && session()->all()["user"]["rankLevel"] >=5 )
+        <div class="container my-4">
+            <div class="row mx-auto">
+                <div class="col">
+                    <a href="/product/create" class="btn btn-outline-primary mx-auto">Créer un produit</a>
+                </div>
+                <div class="col">
+                    <a href="/categories/create" class="btn btn-outline-primary mx-auto">Ajouter une catégorie</a>
+                </div>
+            </div>
+        </div>
+    @endif
+
+    @include('components.searchForm')
+    {{--
+        Most sold items
+    --}}
+    <div class="container-fluid my-4">
+        <div class="row">
+            <div class="col mx-auto text-center">
+                <h2>Produits les plus vendus :</h2>
+            </div>
+        </div>
+    </div>
+    @include('components.products.products', ["products" => $mostSold])
+
+    {{--
+        Items list
+    --}}
+    <div class="container-fluid my-4">
+        <div class="row">
+            <div class="col mx-auto text-center">
+                <h2>Liste des produits :</h2>
+            </div>
+        </div>
+    </div>
+    @include('components.products.products', ["products" => $products])
 @endsection
 
 @section('footer')

@@ -3,6 +3,7 @@
 @section('head')
     @parent
     @include('pages.base')
+
     @include('css.home')
 @endsection
 
@@ -11,13 +12,13 @@
 @endsection
 
 @section('contents')
-    <h1 class="titre">BDE Cesi Nancy</h1>
-    @include('components.presentation')
+    <h2 class="titre">BDE Cesi Nancy</h2>
+    @include('components.presentations.presentation')
     @include('components.social')
-    @include('components.eventPresentation')
-    @include('components.memoriesPresentation')
-    {{-- boite a idée présentation --}}
-    {{-- boutique présentation --}}
+    @include('components.presentations.eventPresentation')
+    @include('components.presentations.memoriesPresentation')
+    @include('components.presentations.ideasPresentation')
+    @include('components.presentations.boutiquePresentation')
 @endsection
 
 @section('footer')

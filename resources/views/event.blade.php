@@ -2,7 +2,7 @@
 
 @section('head')
 	@parent
-	@include('pages.base')
+    @include('pages.base', ['title' => 'Evenements BDE Exia Nancy'])
 	@include('css.home')
 @endsection
 
@@ -11,8 +11,13 @@
 @endsection
 
 @section('contents')
+    <h2 class="titre">Evénements</h2>
+
+    {{--
+        Event creation button
+    --}}
     @if(isset(session()->all()["user"]["rankLevel"]) && session()->all()["user"]["rankLevel"] >=5 )
-        <div class="container my-2">
+        <div class="container my-4">
             <div class="row">
                 <div class="col">
                     <a href="/event/create" class="btn btn-outline-primary mx-auto">Créer un événement</a>
@@ -20,6 +25,9 @@
             </div>
         </div>
     @endif
+    {{--
+        Event creation message
+    --}}
     @if(isset($creation_message))
         <div class="container-fluid">
             <div class="row">
@@ -29,18 +37,30 @@
             </div>
         </div>
     @endif
-    <h2 class="text-center">
-        Evénements à venir :
-    </h2>
-    @include('components.events.events', [
-        "events" => $futureEvents
-    ])
-    <h2 class="text-center">
-        Evénements passés :
-    </h2>
-    @include('components.events.events', [
-        "events" => $pastEvents
-    ])
+
+    {{--
+        Future events
+    --}}
+    <div class="container-fluid my-4">
+        <div class="row">
+            <div class="col mx-auto text-center">
+                <h2>Liste des événements à venir :</h2>
+            </div>
+        </div>
+    </div>
+    @include('components.events.events', ["events" => $futureEvents, "timeline" => "future"])
+
+    {{--
+        Past events
+    --}}
+    <div class="container-fluid my-4">
+        <div class="row">
+            <div class="col mx-auto text-center">
+                <h2>Liste des événements passés :</h2>
+            </div>
+        </div>
+    </div>
+    @include('components.events.events', ["events" => $pastEvents, "timeline" => "past"])
 @endsection
 
 @section('footer')

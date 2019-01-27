@@ -2,7 +2,7 @@
 
 @section('head')
 	@parent
-	@include('pages.base')
+    @include('pages.base', ['title' => 'Boite à idées BDE Exia Nancy'])
 	@include('css.home')
 @endsection
 
@@ -11,6 +11,8 @@
 @endsection
 
 @section('contents')
+    <h2 class="titre">Boite à idées</h2>
+
     @if(isset($creation_message))
         <div class="container-fluid">
             <div class="row">
@@ -23,7 +25,24 @@
     @if(session()->get("isConnected"))
         @include('components.activities.activityForm')
     @endif
-    @include('components.activities.activities')
+    <div class="container-fluid my-4">
+        <div class="row">
+            <div class="col mx-auto text-center">
+                <h2>Liste des activités proposés :</h2>
+            </div>
+        </div>
+    </div>
+    @include('components.activities.activities', ["state" => "pending"])
+    @if(session()->get("isConnected") && session()->all()["user"]["rankLevel"] >= 4)
+        <div class="container-fluid my-4">
+            <div class="row">
+                <div class="col mx-auto text-center">
+                    <h2>Liste des activités bannis :</h2>
+                </div>
+            </div>
+        </div>
+        @include('components.activities.activities', ["state" => "banned"])
+    @endif
 @endsection
 
 @section('footer')
