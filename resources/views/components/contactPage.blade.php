@@ -8,7 +8,7 @@
 						<p>
 							<i class="fas fa-at"></i>
 							Adresse mail:
-							<a class="liens" href="mailto:truc@test.test">truc@test.test</a>
+							<a class="liens" href="mailto:ProjetWEB562@gmail.com">ProjetWEB562@gmail.com</a>
 						</p>
 					</li>
 					<li>

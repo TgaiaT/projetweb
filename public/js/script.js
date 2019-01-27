@@ -4,8 +4,8 @@ $(function(){ /*Si le DOM est bien chargé alors:*/
 		if($(window).width() < 860 ){/*Si l'écran est plus petit qu'une tablette*/
 			$('#buttonMenu').show(); /*alors on affiche le menu dérroullant, on cache les liens et on rend le logo plus gros*/
 			$('.submenu').css('display', 'none');
-			$('#logo').css('width','60%');
-			$('#logo').css('height','60%');
+			$('#logo').css('width','50%');
+			$('#logo').css('height','50%');
 			$('.effacable').hide();
 		} else {/*Sinon on cache le menu dérroullant, on affiche la navbar et le logo prend ca taille habituelle*/
 			$('#buttonMenu').hide();
@@ -53,4 +53,18 @@ $(function(){ /*Si le DOM est bien chargé alors:*/
     span.onclick = function() { 
       	$('#myModal').css('display', "none");
     }
+
+
+	$(window).scroll(function () {
+		if ($(this).scrollTop() > 200 ) { 
+			$('#scrollUp').css('right','10px');
+		} else { 
+			$('#scrollUp').removeAttr( 'style' );
+		}
+	});
+
+
+	$("#scrollUp").click(function(){
+        $("html, body").animate({scrollTop: 0},"slow");
+    });
 });

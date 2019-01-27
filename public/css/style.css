@@ -268,3 +268,16 @@ img:hover
 {
 	padding: 0;
 }
+
+iframe
+{
+	max-width: 100%;
+}
+
+#scrollUp
+{
+	position: fixed;
+	bottom : 10px;
+	right: -100px;
+	opacity: 0.5;
+}

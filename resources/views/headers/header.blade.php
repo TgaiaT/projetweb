@@ -63,4 +63,7 @@
       <div id="caption"></div>
       <span class="close">&times;</span>
     </div>
+    <div id="scrollUp">
+        <i class="fas fa-angle-double-up fa-5x"></i>
+    </div>
 </header>
