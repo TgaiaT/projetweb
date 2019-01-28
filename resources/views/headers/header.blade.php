@@ -2,7 +2,7 @@
     session_start();
 @endphp
 
-<header>
+<header class="">
 
     {{-- Premiere nav-barre la barre bleu qui reste tout en haut de l'écran--}}
     <nav class="navbar navbar-expand-md sticky-top navbar-dark headNav" id="first-head">
@@ -10,13 +10,13 @@
             <li class="navbar-item" id="user-name">
                 @php
                     /*Affichage du nom et prenom si connecté sinon affiche le lien vers la connection*/
-                    if (isset($_SESSION['userloged']) && isset($_SESSION['user_name']) && isset($_SESSION['user_last-name']) && $_SESSION['userloged'] == true)
-                    {
-                        echo '<a href="http://localhost/projetweb/server.php/personnel" class="nav-link">'. $_SESSION['user_name'] . $_SESSION['user_last-name'].'   <i class="far fa-user"></i></a></li>';
+                    /*if (isset($_SESSION['userloged']) && isset($_SESSION['user_name']) && isset($_SESSION['user_last-name']) && $_SESSION['userloged'] == true)
+                    {*/
+                        echo '<a href="http://localhost/projetweb/server.php/personnel" class="nav-link">'. 'Emilien BRUN'/*$_SESSION['user_name'] . $_SESSION['user_last-name']*/.'   <i class="far fa-user"></i></a></li>';
                         echo '<li class="navbar-item" id="user-name"><a href="./deconnexion" class="nav-link">Déconnexion</a>';
-                    } else {
+                    /*} else {
                         echo '<a href="./connexion" class="nav-link">Connexion   <i class="far fa-user"></i></a>';
-                    }
+                    }*/
                 @endphp
             </li>
             <li class="navbar-item" id="user-panier">
@@ -71,7 +71,7 @@
 
 
     {{-- le popup accepter les coockies svp --}}
-        <div class="modal fade" id="acceptCookie" tabindex="-1" role="dialog" aria-labelledby="acceptCookieTitle" aria-hidden="true">
+       {{--  <div class="modal fade" id="acceptCookie" tabindex="-1" role="dialog" aria-labelledby="acceptCookieTitle" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
               <div class="modal-header">
@@ -91,5 +91,5 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> --}}
 </header>
