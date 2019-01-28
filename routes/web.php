@@ -70,3 +70,7 @@ Route::get('personnel', function () {
 Route::get('panier', function () {
     return view('panier');
 });
+
+Route::get('mentions', function () {
+    return view('mentions');
+});

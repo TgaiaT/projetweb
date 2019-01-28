@@ -12,7 +12,7 @@
 
 @section('contents')
 	<h1 class=titre>Mention légales</h1>
-
+	@include('components.cgu')
 @endsection
 
 @section('footer')

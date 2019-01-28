@@ -67,4 +67,9 @@ $(function(){ /*Si le DOM est bien chargé alors:*/
 	$("#scrollUp").click(function(){
         $("html, body").animate({scrollTop: 0},"slow");
     });
+
+	var widget = new AutoComplete('search_bar', /*a remplacer par le json des catégories en attendant un exemple: */ ['habit', 'Nouriture', 'annimal de companie (WTF?)']);
+
+	/*SI LES COOKIES NE SONT PAS ACTIVE ALORS:*/
+	$('#acceptCookie').modal('toggle');
 });

@@ -58,12 +58,38 @@
             </li>
         </ul>
     </nav>
-    <div id="myModal" class="modal">
+
+    <div id="myModal" class="modal">{{-- le modal servant aux images zooms --}}
       <img class="modal-content" id="img01">
       <div id="caption"></div>
       <span class="close">&times;</span>
     </div>
-    <div id="scrollUp">
+
+    <div id="scrollUp"> {{-- le bouton de scroll vers le haut --}}
         <i class="fas fa-angle-double-up fa-5x"></i>
     </div>
+
+
+    {{-- le popup accepter les coockies svp --}}
+        <div class="modal fade" id="acceptCookie" tabindex="-1" role="dialog" aria-labelledby="acceptCookieTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="acceptCookieTitle">Ce site utilise des cookies!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>
+                    En continuant sur ce site vous acceptez que nous utilisions des cookies afin d'améliorer votre navigation.
+                </p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">J'accepte</button>
+                <a href="{{-- le lien des CGU cookies et données --}}">En savoir plus...</a>
+              </div>
+            </div>
+          </div>
+        </div>
 </header>
