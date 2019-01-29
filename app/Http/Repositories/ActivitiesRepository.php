@@ -26,6 +26,21 @@ class ActivitiesRepository
         }
     }
 
+    public static function getActivity($id_activity)
+    {
+        $client = ApiRepository::getClient();
+        try
+        {
+            $url = "activities/" . $id_activity . "?precision=max";
+            $activity = json_decode((($client->request('GET', $url))->getBody()), true)["result"];
+            return ActivitiesRepository::filterActivity($activity);
+
+        }catch (ConnectException | ClientException $e)
+        {
+            return null;
+        }
+    }
+
     public static function createActivity($name, $description, $id_event, $id_user)
     {
         $client = ApiRepository::getClient();
@@ -211,12 +226,28 @@ class ActivitiesRepository
             $filteredActivities[$activity["activities:id_activity"]]["name"] = $activity["activities:activity_name"];
             $filteredActivities[$activity["activities:id_activity"]]["description"] = $activity["activities:activity_description"];
             $filteredActivities[$activity["activities:id_activity"]]["creator"] = $activity["activities:id_user"];
+            $filteredActivities[$activity["activities:id_activity"]]["creator_email"] = $activity["users:email"];
             $filteredActivities[$activity["activities:id_activity"]]["event"] = $activity["activities:id_event"];
             $filteredActivities[$activity["activities:id_activity"]]["state"] = $activity["states:state"];
         }
         $filteredActivities = ActivitiesRepository::getRegistered($filteredActivities);
         $filteredActivities = ActivitiesRepository::getVoters($filteredActivities);
         return $filteredActivities;
+    }
+
+    private static function filterActivity($activity)
+    {
+        $filteredActivity =  [];
+
+        $filteredActivity["id"] = $activity[0]["activities:id_activity"];
+        $filteredActivity["name"] = $activity[0]["activities:activity_name"];
+        $filteredActivity["description"] = $activity[0]["activities:activity_description"];
+        $filteredActivity["creator"] = $activity[0]["activities:id_user"];
+        $filteredActivity["creator_email"] = $activity[0]["users:email"];
+        $filteredActivity["event"] = $activity[0]["activities:id_event"];
+        $filteredActivity["state"] = $activity[0]["states:state"];
+
+        return $filteredActivity;
     }
 
     public static function getVoters($activities)

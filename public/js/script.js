@@ -67,4 +67,11 @@ $(function(){ /*Si le DOM est bien chargé alors:*/
 	$("#scrollUp").click(function(){
         $("html, body").animate({scrollTop: 0},"slow");
     });
+
+    /*SI LES COOKIES NE SONT PAS ACTIVE ALORS:*/
+    if ($('#acceptCookie').hasClass("toggle"))
+    {
+        $('#acceptCookie').modal('toggle');
+    }
+
 });

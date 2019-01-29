@@ -2,7 +2,7 @@
 
 @section('head')
     @parent
-    @include('pages.base', ['title' => 'Espace personel BDE EXIA Nancy'])
+    @include('pages.base', ['title' => 'Espace personel BDE EXIA Nancy', 'description' => " Votre espace personnel: modifiez vos informations, droits a l'oubli."])
     @include('css.home')
 @endsection
 
@@ -11,8 +11,15 @@
 @endsection
 
 @section('contents')
-    <h2 class="titre">Mon espace perso</h2>
-
+    @if(session()->get("isConnected"))
+        @include('components.personnal.personnal')
+        @if(session()->all()["user"]["rankLevel"] >= 4)
+            @include('components.personnal.dl_images')
+            @include('components.personnal.usersTable')
+        @endif
+    @else
+        @include('components.connection.needConnection')
+    @endif
 @endsection
 
 @section('footer')

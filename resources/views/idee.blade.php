@@ -2,7 +2,7 @@
 
 @section('head')
 	@parent
-    @include('pages.base', ['title' => 'Boite à idées BDE Exia Nancy'])
+    @include('pages.base', ['title' => 'Boite à idées BDE Exia Nancy', 'description' => " Proposez des activités et votez pour vos favorites afin qu'elles soient proposées dans les futures manifestations du BDE."])
 	@include('css.home')
 @endsection
 
@@ -28,7 +28,7 @@
     <div class="container-fluid my-4">
         <div class="row">
             <div class="col mx-auto text-center">
-                <h2>Liste des activités proposés :</h2>
+                <h2>Liste des activités proposées :</h2>
             </div>
         </div>
     </div>
@@ -37,7 +37,7 @@
         <div class="container-fluid my-4">
             <div class="row">
                 <div class="col mx-auto text-center">
-                    <h2>Liste des activités bannis :</h2>
+                    <h2>Liste des activités bannies :</h2>
                 </div>
             </div>
         </div>

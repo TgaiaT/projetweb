@@ -2,7 +2,7 @@
 
 @section('head')
     @parent
-    @include('pages.base', ['title' => 'Boutique BDE Exia Nancy'])
+    @include('pages.base', ['title' => 'Boutique BDE Exia Nancy', 'description' => " La boutique en ligne de notre campus. Nourriture, goodies, vetements à l'effigie du BDE et d'autres choses encore ! Venez commander en ligne ce dont vous avez besoins."])
     @include('css.home')
 @endsection
 

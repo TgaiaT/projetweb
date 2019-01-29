@@ -55,11 +55,15 @@ class ConnexionController extends Controller
                     'name' => $result["users:name"],
                     'lastname' => $result["users:lastname"],
                     'email' => $result["users:email"],
+                    'password' => $result["users:password"],
                     'token' => $result["users:token"],
                     'rank' => $result["users:id_rank"],
                     'rankLevel' => $result["ranks:level"],
                     'campus' => $result["users:id_campus"],
                 ]);
+                if (isset($_COOKIE["basketValue"])) $request->session()->put("basketValue", $_COOKIE["basketValue"]);
+                if (isset($_COOKIE["basket"])) $request->session()->put("basket", json_decode($_COOKIE["basket"], true));
+
                 return response()->view('connexion', [
                     "user" => $result,
                     "connectionStatus" => "success"

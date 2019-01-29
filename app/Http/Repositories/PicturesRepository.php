@@ -7,7 +7,9 @@
  */
 
 namespace App\Http\Repositories;
-
+use ZipArchive;
+use RecursiveIteratorIterator;
+use RecursiveDirectoryIterator;
 
 class PicturesRepository
 {
@@ -120,5 +122,41 @@ class PicturesRepository
         {
             return true;
         }
+    }
+
+    public static function zipImages()
+    {
+        $time = time();
+        $url = "/var/www/yourdev/laravel/public/images/zips/";
+        $rootPath = realpath('/var/www/yourdev/laravel/public/images/events');
+        $filename = "zippedAt=" . $time . ".zip";
+
+        // Initialize archive object
+        $zip = new ZipArchive();
+        $zip->open($url . $filename, ZipArchive::CREATE | ZipArchive::OVERWRITE);
+
+        // Create recursive directory iterator
+        /** @var SplFileInfo[] $files */
+        $files = new RecursiveIteratorIterator(
+            new RecursiveDirectoryIterator($rootPath),
+            RecursiveIteratorIterator::LEAVES_ONLY
+        );
+
+        foreach ($files as $name => $file)
+        {
+            // Skip directories (they would be added automatically)
+            if (!$file->isDir())
+            {
+                // Get real and relative path for current file
+                $filePath = $file->getRealPath();
+                $relativePath = substr($filePath, strlen($rootPath) + 1);
+
+                // Add current file to archive
+                $zip->addFile($filePath, $relativePath);
+            }
+        }
+        $zip->close();
+
+        return $filename;
     }
 }

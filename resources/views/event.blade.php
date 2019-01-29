@@ -2,7 +2,7 @@
 
 @section('head')
 	@parent
-    @include('pages.base', ['title' => 'Evenements BDE Exia Nancy'])
+    @include('pages.base', ['title' => 'Evénements BDE Exia Nancy', 'description' => " Evénements à venir : inscrivez vous au différentes activités disponibles. Evénements passés: Partagez des souvenirs en postant des photos et des commentaires."])
 	@include('css.home')
 @endsection
 

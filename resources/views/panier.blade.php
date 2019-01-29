@@ -2,7 +2,7 @@
 
 @section('head')
     @parent
-    @include('pages.base', ['title' => 'pannier BDE Exia Nancy'])
+    @include('pages.base', ['title' => 'Panier BDE Exia Nancy', 'description' => " Votre panier. Ajoutez des produits et commandez facilement sur internet."])
     @include('css.home')
 @endsection
 
@@ -11,7 +11,7 @@
 @endsection
 
 @section('contents')
-    <h2 class="titre">Mon pannier</h2>
+    <h2 class="titre">Mon panier</h2>
     @include("components.products.basket")
 @endsection
 

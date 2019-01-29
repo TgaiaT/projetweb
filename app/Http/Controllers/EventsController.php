@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Repositories\EventsRepository;
+use App\Http\Repositories\UsersRepository;
 use App\Http\Requests\CommentRequest;
 use App\Http\Requests\CreateEventRequest;
 use App\Http\Requests\PictureRequest;
@@ -127,5 +128,32 @@ class EventsController extends Controller
                 return redirect('/event');
             }
         }
+    }
+
+    public function getCsv(Request $request)
+    {
+        $result = $request->input("activity");
+        $json_data = json_decode($result, true)["registered"];
+        $users = UsersRepository::getUsers();
+        $final = "";
+
+        foreach ($json_data as $id)
+        {
+            foreach ($users as $user)
+            {
+                if ($user["id"] == $id)
+                {
+                    $final = ($final == "") ? $user["name"] . " " . $user["lastname"] : $final . ";" . $user["name"] . " " . $user["lastname"];
+                }
+            }
+        }
+        $name = "csvAt=" . time() . ".csv";
+        $url = "/var/www/yourdev/laravel/public/csv/";
+        $csv = fopen($url . $name, "w");
+        fwrite($csv, $final);
+        fclose($csv);
+
+        return response()->download($url . $name, "registered.csv")->deleteFileAfterSend();
+
     }
 }

@@ -2,7 +2,7 @@
 
 @section('head')
     @parent
-    @include('pages.base', ['title' => 'Contact BDE Exia Nancy'])
+    @include('pages.base', ['title' => 'Contact BDE Exia Nancy', 'description' => " Contact. Informations, adresse e-mail, numéro de téléphone, adresse postal. Contactez nous sur les réseaux sociaux."])
     @include('css.home')
 @endsection
 

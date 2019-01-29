@@ -2,7 +2,7 @@
 
 @section('head')
 	@parent
-    @include('pages.base', ['title' => 'Inscription BDE Exia Nancy'])
+    @include('pages.base', ['title' => 'Inscription BDE Exia Nancy', 'description' => " Créez un compte pour bénéficier des fonctionnalités du site."])
 	@include('css.home')
 @endsection
 
@@ -33,9 +33,7 @@
 @endsection
 
 @section('footer')
-    <div class="fixed-bottom">
-	    @include('footers.footer')
-    </div>
+    @include('footers.footer')
 @endsection
 
 @section('scripts')

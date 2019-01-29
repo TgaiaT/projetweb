@@ -24,4 +24,10 @@ class PicturesController extends Controller
             }
         }
     }
+
+    public function zipImages()
+    {
+        $zip = PicturesRepository::zipImages();
+        return response()->download('/var/www/yourdev/laravel/public/images/zips/' . $zip, 'images.zip')->deleteFileAfterSend();
+    }
 }

@@ -2,7 +2,7 @@
 
 @section('head')
     @parent
-    @include('pages.base', ['title' => 'Mentions légales BDE Exia Nancy'])
+    @include('pages.base', ['title' => 'Mentions légales BDE Exia Nancy', 'description' => " Conditions Générales d'Utilisation des données personnelles et mentions légales du sites."])
     @include('css.home')
 @endsection
 
@@ -12,7 +12,7 @@
 
 @section('contents')
     <h2 class=titre>Mentions légales</h2>
-
+    @include('components.mentions.cgu')
 @endsection
 
 @section('footer')

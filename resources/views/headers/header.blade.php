@@ -1,3 +1,14 @@
+@php
+    if (!isset($_COOKIE["accept_cookies"]))
+    {
+        $haveCookie = null;
+    }
+    else
+    {
+        $haveCookie = $_COOKIE["accept_cookies"];
+    }
+@endphp
+
 <header>
     {{-- Premiere nav-barre la barre bleu qui reste tout en haut de l'écran--}}
     <nav class="navbar navbar-expand-md sticky-top navbar-dark headNav" id="first-head">
@@ -7,8 +18,8 @@
                     /*Affichage du nom et prenom si connecté sinon affiche le lien vers la connection*/
                     if (session()->get("isConnected"))
                     {
-                        echo '<a href="/personnel" class="nav-link">'. session()->all()["user"]["name"] ." ". session()->all()["user"]["lastname"] .'   <i class="far fa-user"></i></a>';
-                        echo '<a href="/deconnexion" class="nav-link">Déconnexion</a>';
+                        echo '<a href="/personnel" class="nav-link">'. session()->all()["user"]["name"] ." ". session()->all()["user"]["lastname"] .'   <i class="far fa-user"></i></a></li>';
+                        echo '<li class="navbar-item"><a href="/deconnexion" class="nav-link">Déconnexion</a>';
                     } else {
                         echo '<a href="/connexion" class="nav-link">Connexion   <i class="far fa-user"></i></a>';
                     }
@@ -58,4 +69,28 @@
     <div id="scrollUp">
         <i class="fas fa-angle-double-up fa-5x"></i>
     </div>
+
+    {{-- le popup accepter les coockies svp --}}
+    <div class="modal fade {{ (!isset($haveCookie)) ? "toggle" : "" }}" id="acceptCookie" tabindex="-1" role="dialog" aria-labelledby="acceptCookieTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="acceptCookieTitle">Ce site utilise des cookies!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        En continuant sur ce site vous acceptez que nous utilisons des cookies afin d'améliorer votre navigation.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <a href="/accept"><button type="button" class="btn btn-secondary">J'accepte</button></a>
+                    <a href="/mentions">En savoir plus...</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </header>

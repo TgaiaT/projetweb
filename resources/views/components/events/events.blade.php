@@ -66,6 +66,11 @@
                                                     {!!Form::close()!!}
                                                     @endif
                                                 </div>
+                                                @if(session("isConnected") && session()->all()["user"]["rankLevel"] >= 4)
+                                                    <div class="row">
+                                                        @include('components.events.csv')
+                                                    </div>
+                                                @endif
                                             </li>
                                         @endforeach
                                     </ul>
@@ -110,7 +115,7 @@
                                                                             <button type="submit" class="btn btn-outline-success mx-auto my-2">Like ! ({{count($picture["likes"])}})</button>
                                                                         @else
                                                                             <input name="method" value="dislike" class="d-none">
-                                                                            <button type="submit" class="btn btn-outline-danger mx-auto my-2">Dislike ! ({{count($picture["likes"])}})</button>
+                                                                            <button type="submit" class="btn btn-outline-danger mx-auto my-2">Unlike ! ({{count($picture["likes"])}})</button>
                                                                         @endif
                                                                     @else
                                                                         <button type="button" class="btn btn-outline-secondary mx-auto my-2">Like : ({{count($picture["likes"])}})</button>

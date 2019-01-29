@@ -13,10 +13,12 @@ class ProductsController extends Controller
 {
     public function showShop(Request $request)
     {
+        $categories = null;
+        if (isset($request->input("product_categories")[0])) $categories = explode(",", $request->input("product_categories"));
 
         $products = ProductsRepository::getProducts(
             $request->input("product_selector"),
-            $request->input("product_categories"),
+            $categories,
             $request->input("product_ordering"),
             $request->input("product_name")
         );
@@ -54,11 +56,16 @@ class ProductsController extends Controller
             $request->session()->put("basket", []);
         }
 
-        $request->session()->push("basket", [
+        $item = [
             "product" => $product,
             "quantity" => $quantity,
-        ]);
+        ];
+
+        $request->session()->push("basket", $item);
         $request->session()->put("basketValue", $request->session()->get("basketValue") + $totalValue);
+
+        setcookie("basket", json_encode($request->session()->get("basket")), time() + 365*24*3600, "/");
+        setcookie("basketValue", json_encode($request->session()->get("basketValue")), time() + 365*24*3600, "/");
 
         return redirect('/boutique');
     }

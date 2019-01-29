@@ -1,14 +1,18 @@
+@push('js')
+    <script src="/js/verif.js"></script>
+@endpush
+
 <div class="container my-5">
     <div class="row">
         <div class="col mx-auto py-2">
             <h2 class="mb-5">Formulaire de création d'événement</h2>
 
-            {!!Form::open(['url' => 'event/create'])!!}
+            {!!Form::open(['url' => 'event/create', "onsubmit" => "return verifForm(this);"])!!}
 
             <div class="form-group {!! $errors->has('name') ? 'has-error' : '' !!} row">
                 {!!Form::label('name', "Nom de l'événement", ['class' => 'col-sm-2 col-form-label text-left'])!!}
                 <div class="col-sm-10">
-                    {!!Form::text('name', null, ['class' => 'form-control', 'placeholder' => "Nom"])!!}
+                    {!!Form::text('name', null, ['class' => 'form-control mustCheck', 'placeholder' => "Nom", "id" => "event", "onchange" => "verifEvent(this)"])!!}
                     {!! $errors->first('name', '<small class="help-block">:message</small>') !!}
                 </div>
             </div>
@@ -16,7 +20,7 @@
             <div class="form-group {!! $errors->has('description') ? 'has-error' : '' !!} row">
                 {!!Form::label('description', "Description de l'événement", ['class' => 'col-sm-2 col-form-label text-left'])!!}
                 <div class="col-sm-10">
-                    {!!Form::textarea('description', null, ['class' => 'form-control', 'placeholder' => "Description"])!!}
+                    {!!Form::textarea('description', null, ['class' => 'form-control mustCheck', 'placeholder' => "Description", "id" => "desc", "onchange" => "verifDescription(this)"])!!}
                     {!! $errors->first('description', '<small class="help-block">:message</small>') !!}
                 </div>
             </div>
@@ -32,7 +36,7 @@
             <div class="form-group {!! $errors->has('price') ? 'has-error' : '' !!} row">
                 {!!Form::label('price', "Prix de l'événement", ['class' => 'col-sm-2 col-form-label text-left'])!!}
                 <div class="col-sm-10">
-                    {!!Form::text('price', null, ['class' => 'form-control', 'placeholder' => 'Prix'])!!}
+                    {!!Form::text('price', null, ['class' => 'form-control mustCheck', 'placeholder' => 'Prix', "id" => "prix", "onchange" => "verifPrix(this)"])!!}
                     {!! $errors->first('price', '<small class="help-block">:message</small>') !!}
                 </div>
             </div>
@@ -40,7 +44,7 @@
             <div class="form-group {!! $errors->has('location') ? 'has-error' : '' !!} row">
                 {!!Form::label('location', "Lieu de l'événement", ['class' => 'col-sm-2 col-form-label text-left'])!!}
                 <div class="col-sm-10">
-                    {!!Form::text('location', null, ['class' => 'form-control', 'placeholder' => 'Localisation'])!!}
+                    {!!Form::text('location', null, ['class' => 'form-control mustCheck', 'placeholder' => 'Localisation', "id" => "lieu", "onchange" => "verifLieu(this)"])!!}
                     {!! $errors->first('location', '<small class="help-block">:message</small>') !!}
                 </div>
             </div>

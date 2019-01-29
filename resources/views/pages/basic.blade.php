@@ -13,6 +13,6 @@
 	@yield('footer')
 	
 	@section('scripts')
-		@stack('test')
+		@stack('js')
 	@show
 </body>

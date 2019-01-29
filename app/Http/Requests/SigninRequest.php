@@ -29,6 +29,7 @@ class SigninRequest extends FormRequest
             'email' => 'required|required|between:8,30',
             'password' => 'required',
             'password_verif' => 'required|same:password',
+            'cgu' => 'required',
         ];
     }
 }

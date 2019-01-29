@@ -44,6 +44,7 @@ Route::post('event/register', 'ActivitiesController@register');
 Route::post('event/comment', 'EventsController@comment');
 Route::post('event/like', 'EventsController@like');
 Route::post('event/addpicture', 'EventsController@addPicture');
+Route::post('event/csv', 'EventsController@getCsv');
 
 /*
  * Contact
@@ -63,9 +64,12 @@ Route::post('idees/vote', 'ActivitiesController@vote');
 /*
  * Personal space
  */
-Route::get('personnel', function () {
-    return view('personnel');
-});
+Route::get('personnel', 'UsersController@show');
+Route::post('personnel/update', 'UsersController@update');
+Route::get('personnel/zipimages', 'PicturesController@zipImages');
+Route::get('personnel/cloture', 'UsersController@closeAccount');
+Route::get('personnel/users', 'UsersController@getUsersJson');
+Route::post('personnel/change_rank', 'UsersController@updateRank');
 
 /*
  * Basket
@@ -82,3 +86,9 @@ Route::post('idees/ban', 'ActivitiesController@ban');
 Route::post('comments/ban', 'CommentsController@ban');
 Route::post('pictures/ban', 'PicturesController@ban');
 Route::post('products/ban', 'ProductsController@ban');
+
+/*
+ * Legal mentions
+ */
+Route::get('mentions', function () {return view('mentions');});
+Route::get('/accept', 'UsersController@acceptCookie');

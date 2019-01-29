@@ -3,7 +3,6 @@
 @section('head')
     @parent
     @include('pages.base')
-
     @include('css.home')
 @endsection
 

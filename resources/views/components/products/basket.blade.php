@@ -24,3 +24,4 @@
         <button class="btn btn-outline-success">Procéder à la commande</button>
     {!!Form::close()!!}
 @endif
+

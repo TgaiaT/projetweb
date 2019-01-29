@@ -1,14 +1,18 @@
+@push('js')
+    <script src="/js/verif.js"></script>
+@endpush
+
 <div class="container my-5">
     <div class="row">
         <div class="col mx-auto py-2">
             <h2 class="mb-5">Formulaire de création de produit</h2>
 
-            {!!Form::open(['url' => 'product/create', "files" => true])!!}
+            {!!Form::open(['url' => 'product/create', "files" => true, "onsubmit" => "return verifForm(this);"])!!}
 
             <div class="form-group {!! $errors->has('product_name') ? 'has-error' : '' !!} row">
                 {!!Form::label('product_name', "Nom du produit", ['class' => 'col-sm-2 col-form-label text-left'])!!}
                 <div class="col-sm-10">
-                    {!!Form::text('product_name', null, ['class' => 'form-control', 'placeholder' => "Nom"])!!}
+                    {!!Form::text('product_name', null, ['class' => 'form-control mustCheck', 'placeholder' => "Nom", "id" => "event", "onchange" => "verifEvent(this)"])!!}
                     {!! $errors->first('product_name', '<small class="help-block">:message</small>') !!}
                 </div>
             </div>
@@ -16,7 +20,7 @@
             <div class="form-group {!! $errors->has('product_description') ? 'has-error' : '' !!} row">
                 {!!Form::label('product_description', "Description du produit", ['class' => 'col-sm-2 col-form-label text-left'])!!}
                 <div class="col-sm-10">
-                    {!!Form::textarea('product_description', null, ['class' => 'form-control', 'placeholder' => "Description"])!!}
+                    {!!Form::textarea('product_description', null, ['class' => 'form-control mustCheck', 'placeholder' => "Description", "id" => "desc", "onchange" => "verifDescription(this)"])!!}
                     {!! $errors->first('product_description', '<small class="help-block">:message</small>') !!}
                 </div>
             </div>
@@ -24,7 +28,7 @@
             <div class="form-group {!! $errors->has('product_price') ? 'has-error' : '' !!} row">
                 {!!Form::label('product_price', "Prix du produit", ['class' => 'col-sm-2 col-form-label text-left'])!!}
                 <div class="col-sm-10">
-                    {!!Form::text('product_price', null, ['class' => 'form-control', 'placeholder' => 'Prix'])!!}
+                    {!!Form::text('product_price', null, ['class' => 'form-control mustCheck', 'placeholder' => 'Prix', "id" => "prix", "onchange" => "verifPrix(this)"])!!}
                     {!! $errors->first('product_price', '<small class="help-block">:message</small>') !!}
                 </div>
             </div>

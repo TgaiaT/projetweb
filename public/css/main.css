@@ -1,0 +1,189 @@
+/*
+GLOBAL
+*/
+
+body {
+    overflow-x: hidden;
+}
+
+
+/*
+MON PANIER
+*/
+
+#Tableau {
+    margin: 5px auto;
+    width: 50%;
+    float: none;
+    text-align: center;
+    border: 0px solid #326295;
+}
+
+table.table-bordered>thead>tr>th {
+    border: 2px solid #326295;
+}
+
+table.table-bordered>tbody>tr>td {
+    border: 2px solid #326295;
+}
+
+table.table-bordered>tbody>tr>td>img {
+    max-height: 230px;
+    max-width: 230px;
+}
+
+table.table-bordered>tbody>tr>td>button {
+    background: #326295;
+    margin: 10px auto;
+    float: none;
+    border-radius: 5px;
+}
+
+input.textbox2 {
+    border: 1px solid #326295;
+    text-align: center;
+}
+
+#container {
+    text-align: center;
+}
+
+
+/*
+MODIFIER MON PROFIL
+*/
+
+#buttonconf {
+    background: #326295;
+    border: 1px solid #326295;
+}
+
+#buttonannul {
+    background: #326295;
+    border: 1px solid #326295;
+}
+
+#buttonmail {
+    align-items: center;
+    text-align: center;
+    background: #326295;
+    border: 1px solid #326295;
+}
+
+#button {
+    background: #326295;
+    border: 1px solid #326295;
+}
+
+#Titre {
+    max-width: 100%;
+    flex: 25%;
+}
+
+#Centre {
+    max-width: 100%;
+    flex: 25%;
+}
+
+#inputEmail {
+    max-width: 100%;
+    flex: 25%;
+}
+
+#inputPassword1 {
+    max-width: 100%;
+    flex: 25%;
+}
+
+#inputPassword2 {
+    max-width: 100%;
+    flex: 25%;
+}
+
+#inputPassword3 {
+    max-width: 100%;
+    flex: 25%;
+}
+
+
+/*
+PROMOTION/RETROGRADATION
+*/
+
+#buttonpromo {
+    background: #326295;
+    border: 1px solid #326295;
+}
+
+
+/*
+FOOTER
+*/
+
+#footer {
+    padding-top: 8px;
+    padding-bottom: 6px;
+    height: auto;
+    overflow-x: hidden;
+    background: #444444 !important;
+}
+
+#footer2 {
+    padding-top: 7px;
+    height: auto;
+    overflow-x: hidden;
+    background: #2b2b2b !important;
+}
+
+#footer h5 {
+    padding-right: 75px;
+    color: #ffffff;
+    font-size: 150%
+}
+
+#footer2 h5 {
+    padding-right: 50px;
+    color: #ffffff;
+    font-size: 80%
+}
+
+#footer2 h6 {
+    font-size: 75%
+}
+
+#footer2 h4 {
+    padding-left: 25px;
+    font-size: 75%
+}
+
+#footer a {
+    color: #ffffff;
+}
+
+#footer a:hover {
+    color: #326295;
+}
+
+#footer2 ul.social li a img {
+    -webkit-transition: .5s all ease;
+    -moz-transition: .5s all ease;
+    transition: .5s all ease;
+}
+
+#footer2 ul.social li:hover a img {
+    margin-top: -10px;
+}
+
+#footer2 ul.social li a,
+#footer2 ul.quick-links li a {
+    color: #ffffff;
+}
+
+#footer2 ul.social li a:hover {
+    color: #326295;
+}
+
+.img-fluid-footer2 {
+    max-width: 100%;
+    height: 30px;
+}

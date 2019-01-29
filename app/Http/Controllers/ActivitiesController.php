@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Repositories\ActivitiesRepository;
 use App\Http\Repositories\BanRepository;
 use App\Http\Repositories\EventsRepository;
+use App\Http\Repositories\MailRepository;
 use App\Http\Requests\CreateActivityRequest;
 use Illuminate\Http\Request;
 
@@ -61,6 +62,8 @@ class ActivitiesController extends Controller
             }
             else
             {
+                $activity = ActivitiesRepository::getActivity($request->input("id_activity"));
+                MailRepository::sendMail($activity["creator_email"], "Approbation de votre activité :", "Votre activité " . $activity["name"] . " a été approuvée et ajoutée à un événement.");
                 return redirect('/idees');
             }
         }
