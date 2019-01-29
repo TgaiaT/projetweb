@@ -1,3 +1,4 @@
+{{-- If the user is already connected --}}
 <div>
     <h4>Vous êtes déjà connecté <?php print_r(session()->all()["user"]["name"]) ?> !</h4>
     <p>

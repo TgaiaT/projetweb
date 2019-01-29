@@ -8,6 +8,9 @@ use App\Http\Repositories\BanRepository;
 
 class CommentsController extends Controller
 {
+    /*
+     * Ban a comment.
+     */
     public function ban(Request $request)
     {
         if (isset($request->input("id_comment")[0]) && isset($request->session()->all()["user"]["id"]) && isset($request->input("method")[0]))

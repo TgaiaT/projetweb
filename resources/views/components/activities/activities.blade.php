@@ -1,3 +1,4 @@
+{{-- Show the activities given by the controller --}}
 <div class="container">
     <div class="conteneur row">
         @foreach($activities as $activity)

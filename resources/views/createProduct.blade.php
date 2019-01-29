@@ -1,3 +1,4 @@
+{{-- Show the form for create product --}}
 @extends('pages.basic')
 
 @section('head')

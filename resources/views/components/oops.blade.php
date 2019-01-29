@@ -1,3 +1,4 @@
+{{-- Oops component is used when an error occured --}}
 <div>
     <h4>Oops something went wrong !</h4>
     <p>

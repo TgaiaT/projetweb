@@ -1,3 +1,4 @@
+{{-- Show the form to create event --}}
 @extends('pages.basic')
 
 @section('head')

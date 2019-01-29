@@ -1,3 +1,4 @@
+{{-- Home page --}}
 @extends('pages.basic')
 
 @section('head')

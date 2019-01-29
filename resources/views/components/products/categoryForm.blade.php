@@ -2,6 +2,7 @@
     <script src="/js/verif.js"></script>
 @endpush
 
+{{-- Form used to create a category --}}
 <div class="container my-5">
     <div class="row">
         <div class="col mx-auto py-2">

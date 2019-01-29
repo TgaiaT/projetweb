@@ -1,3 +1,4 @@
+{{-- The social links --}}
 <div id="social" class="conteneur">
 	<article class="explain ">
 		<div>

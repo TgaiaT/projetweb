@@ -12,7 +12,7 @@ use App\Repositories\Http\ConnectionRepository;
 class ConnexionController extends Controller
 {
     /*
-     * Get the forms
+     * Get the connection form.
      */
 	public function getConnectionForm(Request $request)
 	{
@@ -25,6 +25,9 @@ class ConnexionController extends Controller
 		return view('connexion');
 	}
 
+	/*
+	 * Get the registration form.
+	 */
     public function getSigninForm(Request $request)
     {
         if ($request->session()->get("isConnected"))
@@ -37,7 +40,7 @@ class ConnexionController extends Controller
     }
 
     /*
-     * Connection procedures
+     * Connection procedures.
      */
 	public function connect(LoginRequest $request)
 	{
@@ -61,9 +64,15 @@ class ConnexionController extends Controller
                     'rankLevel' => $result["ranks:level"],
                     'campus' => $result["users:id_campus"],
                 ]);
+                /*
+                 * Read the basket data from an existing cookie.
+                 */
                 if (isset($_COOKIE["basketValue"])) $request->session()->put("basketValue", $_COOKIE["basketValue"]);
                 if (isset($_COOKIE["basket"])) $request->session()->put("basket", json_decode($_COOKIE["basket"], true));
 
+                /*
+                 * Store the user information in the session.
+                 */
                 return response()->view('connexion', [
                     "user" => $result,
                     "connectionStatus" => "success"
@@ -82,6 +91,10 @@ class ConnexionController extends Controller
             ]);
         }
 	}
+
+	/*
+	 * Registration procedures.
+	 */
     public function signin(SigninRequest $request)
     {
         $request->validated();
@@ -123,6 +136,9 @@ class ConnexionController extends Controller
         }
     }
 
+    /*
+     * Disconnection procedure. Automatic redirect to the index.
+     */
     public function disconnect(Request $request)
     {
         if (!$request->session()->get("isConnected"))

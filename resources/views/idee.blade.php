@@ -1,3 +1,4 @@
+{{-- Ideas box page --}}
 @extends('pages.basic')
 
 @section('head')
@@ -22,6 +23,7 @@
             </div>
         </div>
     @endif
+    {{-- Form --}}
     @if(session()->get("isConnected"))
         @include('components.activities.activityForm')
     @endif
@@ -32,7 +34,9 @@
             </div>
         </div>
     </div>
+    {{-- Activities --}}
     @include('components.activities.activities', ["state" => "pending"])
+    {{-- Banned activities --}}
     @if(session()->get("isConnected") && session()->all()["user"]["rankLevel"] >= 4)
         <div class="container-fluid my-4">
             <div class="row">

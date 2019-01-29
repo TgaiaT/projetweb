@@ -1,3 +1,4 @@
+{{-- The connection form --}}
 @push('js')
     <script src="/js/verif.js"></script>
 @endpush

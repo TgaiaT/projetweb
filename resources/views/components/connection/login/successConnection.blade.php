@@ -1,3 +1,4 @@
+{{-- If connection success --}}
 <div>
     <h4>Connexion réussie !</h4>
     <p>

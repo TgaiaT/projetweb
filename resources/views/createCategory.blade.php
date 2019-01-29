@@ -1,3 +1,4 @@
+{{-- Show the form to create category --}}
 @extends('pages.basic')
 
 @section('head')

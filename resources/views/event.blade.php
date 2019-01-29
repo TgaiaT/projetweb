@@ -1,3 +1,4 @@
+{{-- Events page --}}
 @extends('pages.basic')
 
 @section('head')

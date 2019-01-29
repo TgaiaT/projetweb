@@ -1,3 +1,4 @@
+{{-- Presentation of the shop --}}
 <div class="boutiquePrensentation">
     <div class="conteneur">
         <h3 class="titre">La boutique</h3>

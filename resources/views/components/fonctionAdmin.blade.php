@@ -1,3 +1,4 @@
+{{-- Component doesn't used --}}
 @php
 	if (isset($_SESSION['userloged']) && isset($_SESSION['grade']) && $_SESSION['grade']>= 4) {
 		echo '<button type="button" class="btn btn-ban btn-danger"<i class="fas fa-ban"></i></button>';

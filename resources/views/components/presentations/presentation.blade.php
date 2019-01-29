@@ -1,3 +1,4 @@
+{{-- The index slider --}}
 <div id="presentation">
 
 	{{-- Ici c'est le carousel de présentation des différentes pages et fonctionnalitées du site --}}

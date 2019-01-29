@@ -11,6 +11,9 @@ namespace App\Http\Repositories;
 
 class EventsRepository
 {
+    /*
+     * Get all the events.
+     */
     public static function getEvents()
     {
         $client = ApiRepository::getClient();
@@ -18,6 +21,7 @@ class EventsRepository
         {
             $url = "manifestations?precision=max";
             $events = json_decode((($client->request('GET', $url))->getBody()), true)["result"];
+            //Layout the events.
             return EventsRepository::filterEvents($events);
 
         }catch (ConnectException | ClientException $e)
@@ -26,6 +30,9 @@ class EventsRepository
         }
     }
 
+    /*
+     * Create an event.
+     */
     public static function createEvent($name, $description, $date, $price, $location, $image)
     {
         $client = ApiRepository::getClient();
@@ -59,12 +66,20 @@ class EventsRepository
         }
     }
 
+    /*
+     * Filter specified events by date.
+     * Filter : past, future.
+     * Limit: in seconds.
+     */
     public static function filterByDate($events, $filter, $limit)
     {
         $filteredEvents = [];
         $actualTime = time();
         foreach ($events as $event)
         {
+            /*
+             * Incoming events.
+             */
             if (isset($filter) && $filter == "future")
             {
                 if (strtotime($event["date"]) > $actualTime)
@@ -79,6 +94,9 @@ class EventsRepository
                     }
                 }
             }
+            /*
+             * Past events.
+             */
             elseif (isset($filter) && $filter == "past")
             {
                 if (strtotime($event["date"]) <= $actualTime)
@@ -97,6 +115,9 @@ class EventsRepository
         return $filteredEvents;
     }
 
+    /*
+     * Layout the raw events data to an events array.
+     */
     private static function filterEvents($events)
     {
         $filteredEvents =  [];
@@ -116,6 +137,9 @@ class EventsRepository
         return $filteredEvents;
     }
 
+    /*
+     * Get activities of events.
+     */
     private static function getActivities($events)
     {
         $client = ApiRepository::getClient();
@@ -141,6 +165,9 @@ class EventsRepository
         return $filteredEvents;
     }
 
+    /*
+     * Get pictures of events.
+     */
     private static function getPictures($events)
     {
         $client = ApiRepository::getClient();
@@ -165,6 +192,9 @@ class EventsRepository
         return $filteredEvents;
     }
 
+    /*
+     * Comment a picture of an event.
+     */
     public static function comment($id_user, $id_picture, $comment, $add)
     {
         $client = ApiRepository::getClient();
@@ -203,6 +233,9 @@ class EventsRepository
         }
     }
 
+    /*
+     * Add a picture to an event.
+     */
     public static function addPicture($id_event, $image, $add)
     {
         $client = ApiRepository::getClient();
@@ -240,12 +273,18 @@ class EventsRepository
         }
     }
 
+    /*
+     * Ban or forgive an event.
+     */
     public static function ban($id_event, $ban)
     {
         $client = ApiRepository::getClient();
         try
         {
             $url = "manifestations/" . $id_event;
+            /*
+             * Ban the event.
+             */
             if ($ban)
             {
                 $res = json_decode((($client->request('PUT', $url, [
@@ -256,6 +295,9 @@ class EventsRepository
                     ]
                 ]))->getBody()), true);
             }
+            /*
+             * Forgive the event.
+             */
             else
             {
                 $res = json_decode((($client->request('PUT', $url, [
@@ -281,6 +323,9 @@ class EventsRepository
         }
     }
 
+    /*
+     * Like a picture of an event.
+     */
     public static function like($id_picture, $id_user, $add)
     {
         $client = ApiRepository::getClient();

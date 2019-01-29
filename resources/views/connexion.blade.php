@@ -1,3 +1,4 @@
+{{-- The connection page --}}
 @extends('pages.basic')
 
 @section('head')
@@ -13,17 +14,21 @@
 @section('contents')
     @if(isset($connectionStatus))
         @switch($connectionStatus)
+            {{-- If success --}}
             @case("success")
                 @include('components.connection.login.successConnection')
                 @break
+            {{-- If already connected --}}
             @case("already_connected")
                 @include('components.connection.login.alreadyConnected')
                 @break
+            {{-- If fail --}}
             @case("failure")
                 @include('components.connection.login.failureConnection')
                 @include('components.connection.login.connexionForm')
                 @break
 
+            {{-- If something gone wrong --}}
             @default
                 @include('components.oops')
         @endswitch

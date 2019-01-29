@@ -1,3 +1,4 @@
+{{-- Show the events given by the controller --}}
 <div id="memories">
     @foreach($events as $event)
         @if($event["state"] != "banned")

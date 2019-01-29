@@ -91,4 +91,5 @@ Route::post('products/ban', 'ProductsController@ban');
  * Legal mentions
  */
 Route::get('mentions', function () {return view('mentions');});
-Route::get('/accept', 'UsersController@acceptCookie');
+Route::get('accept', 'UsersController@acceptCookie');
+Route::get('conditions_de_ventes', function () {return view('sellsConditions');});

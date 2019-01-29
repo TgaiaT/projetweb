@@ -7,9 +7,15 @@ use Illuminate\Routing\PostsController as Controller;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
+/*
+ * Controller not used.
+ */
 class PostsController extends Controller
 {
 
+    /*
+     * Controller not used.
+     */
 	public function index()
 	{
 		dd(Session::all());

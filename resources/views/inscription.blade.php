@@ -1,3 +1,4 @@
+{{-- Registration page --}}
 @extends('pages.basic')
 
 @section('head')

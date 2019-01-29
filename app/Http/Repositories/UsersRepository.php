@@ -14,6 +14,9 @@ use GuzzleHttp\Exception\ConnectException;
 
 class UsersRepository
 {
+    /*
+     * Get all the users.
+     */
     public static function getUsers()
     {
         $client = ApiRepository::getClient();
@@ -21,6 +24,7 @@ class UsersRepository
         {
             $url = "users?precision=max";
             $users = json_decode((($client->request('GET', $url))->getBody()), true)["result"];
+            //Layout the users.
             return UsersRepository::filterUsers($users);
 
         }catch (ConnectException | ClientException $e)
@@ -29,6 +33,9 @@ class UsersRepository
         }
     }
 
+    /*
+     * Layout the raw users data to an users array.
+     */
     private static function filterUsers($users)
     {
         $finalUsers =  [];
@@ -49,6 +56,9 @@ class UsersRepository
         return $finalUsers;
     }
 
+    /*
+     * Get all the campus.
+     */
     public static function getCampus()
     {
         $client = ApiRepository::getClient();
@@ -64,6 +74,9 @@ class UsersRepository
         }
     }
 
+    /*
+     * Layout the raw campus data to an campus array.
+     */
     private static function filterCampus($campus)
     {
         $finalCampus =  [];
@@ -75,6 +88,9 @@ class UsersRepository
         return $finalCampus;
     }
 
+    /*
+     * Get all the ranks
+     */
     public static function getRanks()
     {
         $client = ApiRepository::getClient();
@@ -90,6 +106,9 @@ class UsersRepository
         }
     }
 
+    /*
+     * Layout the raw ranks data to an ranks array.
+     */
     private static function filterRanks($ranks)
     {
         $finalRanks =  [];
@@ -102,6 +121,9 @@ class UsersRepository
         return $finalRanks;
     }
 
+    /*
+     * Update user's information.
+     */
     public static function update($id_user, $new_password, $campus, $id_rank)
     {
         $client = ApiRepository::getClient();
@@ -109,6 +131,9 @@ class UsersRepository
         {
             $url = "users/" . $id_user;
 
+            /*
+             * Update the campus.
+             */
             if (isset($campus))
             {
                 $campuses = UsersRepository::getCampus();
@@ -131,6 +156,9 @@ class UsersRepository
             }
             if (isset($res["error"])) return true;
 
+            /*
+             * Update the rank.
+             */
             if (isset($id_rank))
             {
                 $res = json_decode((($client->request('PUT', $url, [
@@ -143,6 +171,9 @@ class UsersRepository
             }
             if (isset($res["error"])) return true;
 
+            /*
+             * Update the password.
+             */
             if (isset($new_password))
             {
                 $res = json_decode((($client->request('PUT', $url, [
@@ -169,6 +200,9 @@ class UsersRepository
         }
     }
 
+    /*
+     * Close an user account.
+     */
     public static function closeAccount($id_user)
     {
         $client = ApiRepository::getClient();
@@ -202,6 +236,9 @@ class UsersRepository
         }
     }
 
+    /*
+     * Get users information in a JSON format.
+     */
     public static function formatToJson()
     {
         $json = [];

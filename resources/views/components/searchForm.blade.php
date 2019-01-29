@@ -1,4 +1,6 @@
+{{-- The searhbar for the shop --}}
 @push('js')
+    {{-- Script for the autocompleter --}}
     <script>
         @php
             $filteredCategories = [];

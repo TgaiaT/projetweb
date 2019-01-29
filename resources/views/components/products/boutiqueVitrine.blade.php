@@ -1,3 +1,4 @@
+{{-- Component doesn't used --}}
 <div id="boutiqueVitrine">
     <div class="conteneur">
         <h3 class="titre">Les articles les plus populaires</h3>

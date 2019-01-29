@@ -11,6 +11,9 @@ use Illuminate\Http\Request;
 
 class ActivitiesController extends Controller
 {
+    /*
+     * Show the ideas box view.
+     */
     public function showActivities(Request $request)
     {
         $activities = ActivitiesRepository::getActivities();
@@ -30,6 +33,9 @@ class ActivitiesController extends Controller
         ]);
     }
 
+    /*
+     * Create an activity.
+     */
     public function createActivity(CreateActivityRequest $request)
     {
         $request->validated();
@@ -51,6 +57,9 @@ class ActivitiesController extends Controller
         }
     }
 
+    /*
+     * Add the activity to a manifestation. The activity is automatically approved. Send an email to the creator of the activity.
+     */
     public function updateActivity(Request $request)
     {
         if (isset($request->input("id_activity")[0]) && isset($request->input("id_event")[0]))
@@ -63,12 +72,16 @@ class ActivitiesController extends Controller
             else
             {
                 $activity = ActivitiesRepository::getActivity($request->input("id_activity"));
+                //Send an email.
                 MailRepository::sendMail($activity["creator_email"], "Approbation de votre activité :", "Votre activité " . $activity["name"] . " a été approuvée et ajoutée à un événement.");
                 return redirect('/idees');
             }
         }
     }
 
+    /*
+     * Vote to an idea.
+     */
     public function vote(Request $request)
     {
         if (isset($request->input("id_activity")[0]) && isset($request->session()->all()["user"]["id"]) && isset($request->input("method")[0]))
@@ -85,6 +98,9 @@ class ActivitiesController extends Controller
         }
     }
 
+    /*
+     * Register to an event.
+     */
     public function register(Request $request)
     {
         if (isset($request->input("id_activity")[0]) && isset($request->session()->all()["user"]["id"]) && isset($request->input("method")[0]))
@@ -101,6 +117,9 @@ class ActivitiesController extends Controller
         }
     }
 
+    /*
+     * Ban an activity.
+     */
     public function ban(Request $request)
     {
         if (isset($request->input("id_activity")[0]) && isset($request->session()->all()["user"]["id"]) && isset($request->input("method")[0]))

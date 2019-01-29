@@ -91,6 +91,21 @@ function verifDescription(champ)
    }
 }
 
+function checkForm()
+{
+    // Get the checkbox
+    var checkBox = document.getElementById("terms");
+    var boola = true;
+    // If the checkbox is checked, display the output text
+    if (checkBox.checked == false){
+        $("#terms").removeClass("valid");
+        boola = false;
+    } else {
+        $("#terms").addClass("valid");
+        return true;
+    }
+}
+
 function verifLieu(champ)
 {
    var regex = /.{1,50}/;

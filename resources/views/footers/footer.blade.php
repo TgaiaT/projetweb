@@ -22,17 +22,17 @@
             <ul class="list-unstyled list-inline social text-center">
                 <li class="list-inline-item">
                     <h5>
-                        <a href="/mentions"><i class="fa fa-angle-double-right"></i> Mentions légales</a>
+                        <a href="/mentions"><i class="fa fa-angle-double-right"></i> Mentions légales et CGU</a>
                     </h5>
                 </li>
                 <li class="list-inline-item">
                     <h5>
-                        <a href="/mentions"><i class="fa fa-angle-double-right"></i> Politique de Protection des Données Personnelles</a>
+                        <a href="/conditions_de_ventes"><i class="fa fa-angle-double-right"></i> Conditions de ventes</a>
                     </h5>
                 </li>
                 <li class="list-inline-item">
                     <h5>
-                        <a href="javascript:void();"><i class="fa fa-angle-double-right"></i> Nos partenaires</a>
+                        <a href="/contact"><i class="fa fa-angle-double-right"></i> Nos partenaires</a>
                     </h5>
                 </li>
                 <li class="list-inline-item">
@@ -54,7 +54,7 @@
                     <a href="https://www.viadeo.com/fr/company/cesi"><img src="/images/viadeo.jpg" class="img-fluid-footer2" alt="Responsive image"></a>
                 </li>
                 <li class="list-inline-item">
-                    <h4>&copy 2019 Cesi BDE</h4>
+                    <h4>&copy; 2019 Cesi BDE</h4>
                 </li>
             </ul>
         </div>

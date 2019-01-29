@@ -1,3 +1,4 @@
+{{-- OOPS Page, showed when errors occured --}}
 @extends('pages.basic')
 
 @section('head')

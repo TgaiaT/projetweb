@@ -13,6 +13,9 @@ use RecursiveDirectoryIterator;
 
 class PicturesRepository
 {
+    /*
+     * Get all the pictures.
+     */
     public static function getPictures($id)
     {
         $client = ApiRepository::getClient();
@@ -20,7 +23,8 @@ class PicturesRepository
         {
             $url = "pictures" . ((isset($id)) ? "/" . $id : "" ) ."?precision=max";
             $pictures = json_decode((($client->request('GET', $url))->getBody()), true)["result"];
-            return PicturesRepository::filterPictures($pictures); //TODO
+            //Layout pictures.
+            return PicturesRepository::filterPictures($pictures);
 
         }catch (ConnectException | ClientException $e)
         {
@@ -28,6 +32,9 @@ class PicturesRepository
         }
     }
 
+    /*
+     * Layout the pictures in an pictures array.
+     */
     private static function filterPictures($pictures)
     {
         $filteredPictures =  [];
@@ -42,6 +49,9 @@ class PicturesRepository
         return $filteredPictures;
     }
 
+    /*
+     * Get comments of pictures.
+     */
     private static function getComments($pictures)
     {
         $client = ApiRepository::getClient();
@@ -65,6 +75,9 @@ class PicturesRepository
         return $filteredPictures;
     }
 
+    /*
+     * Get likes of pictures.
+     */
     private static function getLiked($pictures)
     {
         $client = ApiRepository::getClient();
@@ -83,12 +96,18 @@ class PicturesRepository
         return $filteredPictures;
     }
 
+    /*
+     * Ban or forgive a picture.
+     */
     public static function ban($id_picture, $ban)
     {
         $client = ApiRepository::getClient();
         try
         {
             $url = "pictures/" . $id_picture;
+            /*
+             * Ban a picture.
+             */
             if ($ban)
             {
                 $res = json_decode((($client->request('PUT', $url, [
@@ -99,6 +118,9 @@ class PicturesRepository
                     ]
                 ]))->getBody()), true);
             }
+            /*
+             * Forgive a picture.
+             */
             else
             {
                 $res = json_decode((($client->request('PUT', $url, [
@@ -124,6 +146,9 @@ class PicturesRepository
         }
     }
 
+    /*
+     * Zip all the events pictures and download it.
+     */
     public static function zipImages()
     {
         $time = time();

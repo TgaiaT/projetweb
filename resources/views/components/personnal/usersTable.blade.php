@@ -1,3 +1,5 @@
+{{-- Administration table for change user's rank --}}
+{{-- We use Datatable to transfomr the table and recup data with AJAX --}}
 @push('css')
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.2.7/css/select.dataTables.min.css">

@@ -14,6 +14,9 @@ use App\Http\Repositories\BanRepository;
 
 class UsersController extends Controller
 {
+    /*
+     * Show the personal space view.
+     */
     public function show(Request $request)
     {
         if ($request->session("isConnected") && isset($request->session()->all()["user"]["rankLevel"]) && $request->session()->all()["user"]["rankLevel"] >= 4)
@@ -24,6 +27,10 @@ class UsersController extends Controller
         return view('personnel');
     }
 
+    /*
+     * Update user's information.
+     * Update campus, password or both.
+     */
     public function update(PersonnelRequest $request)
     {
         $request->validated();
@@ -60,12 +67,18 @@ class UsersController extends Controller
         return redirect('/personnel');
     }
 
+    /*
+     * Accept the cookie regulation save the choice in a cookie.
+     */
     public function acceptCookie(Request $request)
     {
         setcookie("accept_cookies", true, time() + 365*24*3600);
         return redirect('');
     }
 
+    /*
+     * Close an user account. This operation isn't reversible.
+     */
     public function closeAccount(Request $request)
     {
         if ($request->session()->get("isConnected"))
@@ -79,12 +92,19 @@ class UsersController extends Controller
 
     }
 
+    /*
+     * Get the user in JSON format.
+     * Mask the password, token and other sensitive data.
+     */
     public function getUsersJson()
     {
         $json = UsersRepository::formatToJson();
         return response()->json($json);
     }
 
+    /*
+     * Update the rank of an user.
+     */
     public function updateRank(Request $request)
     {
         $id_rank = $request->input("rank");

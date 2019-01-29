@@ -1,3 +1,4 @@
+{{-- Presentation of the events --}}
 <div id="eventPresentation">
     <div class="conteneur">
         <h3 class="titre">Evènements à venir</h3>

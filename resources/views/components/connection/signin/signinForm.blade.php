@@ -1,3 +1,4 @@
+{{-- The registration form --}}
 @push('js')
     <script src="/js/verif.js"></script>
 @endpush
@@ -52,8 +53,8 @@
             <div class="form-group row text-center">
                 <div class="col">
                     <div class="form-check">
-                        <input name="cgu" class="form-check-input" type="checkbox" id="gridCheck">
-                        <label class="form-check-label" for="gridCheck">
+                        <input name="cgu" class="form-check-input mustCheck" type="checkbox" id="terms" onclick="checkForm(this)">
+                        <label class="form-check-label" for="terms">
                             J'ai accepté les conditions d'utilisation du site
                         </label>
                         {!! $errors->first('cgu', '<br><small class="help-block">:message</small>') !!}

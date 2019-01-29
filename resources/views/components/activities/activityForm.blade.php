@@ -1,3 +1,4 @@
+{{-- Form to create an activity --}}
 @push('js')
     <script src="/js/verif.js"></script>
 @endpush

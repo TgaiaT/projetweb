@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
+    /*
+     * Show the index.
+     */
     public function index(Request $request)
     {
         $products = ProductsRepository::getMostSold();

@@ -1,3 +1,4 @@
+{{-- Components aren't used anymore --}}
 <div id="memories">
   <div class="conteneur">
     {{-- Surrement a rediviser en include pour les boucle PHP --}}

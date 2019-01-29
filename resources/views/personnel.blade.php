@@ -1,3 +1,4 @@
+{{-- The personal space page --}}
 @extends('pages.basic')
 
 @section('head')

@@ -1,16 +1,13 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Nathan
- * Date: 24/01/2019
- * Time: 21:25
- */
 
 namespace App\Http\Repositories;
 
 
 class ActivitiesRepository
 {
+    /*
+     * Get all the activities.
+     */
     public static function getActivities()
     {
         $client = ApiRepository::getClient();
@@ -18,6 +15,7 @@ class ActivitiesRepository
         {
             $url = "activities?precision=max";
             $activities = json_decode((($client->request('GET', $url))->getBody()), true)["result"];
+            //Layout the activities.
             return ActivitiesRepository::filterActivities($activities);
 
         }catch (ConnectException | ClientException $e)
@@ -26,6 +24,9 @@ class ActivitiesRepository
         }
     }
 
+    /*
+     * Get an specified activity.
+     */
     public static function getActivity($id_activity)
     {
         $client = ApiRepository::getClient();
@@ -33,6 +34,7 @@ class ActivitiesRepository
         {
             $url = "activities/" . $id_activity . "?precision=max";
             $activity = json_decode((($client->request('GET', $url))->getBody()), true)["result"];
+            //Layout the activity.
             return ActivitiesRepository::filterActivity($activity);
 
         }catch (ConnectException | ClientException $e)
@@ -41,6 +43,9 @@ class ActivitiesRepository
         }
     }
 
+    /*
+     * Create an activity.
+     */
     public static function createActivity($name, $description, $id_event, $id_user)
     {
         $client = ApiRepository::getClient();
@@ -72,6 +77,10 @@ class ActivitiesRepository
         }
     }
 
+    /*
+     * Update the state of an activity.
+     * Change to validated if pending.
+     */
     public static function updateActivity($id_activity, $id_event)
     {
         $client = ApiRepository::getClient();
@@ -100,6 +109,9 @@ class ActivitiesRepository
         }
     }
 
+    /*
+     * Ban an activity.
+     */
     public static function ban($id_activity, $ban)
     {
         $client = ApiRepository::getClient();
@@ -141,6 +153,9 @@ class ActivitiesRepository
         }
     }
 
+    /*
+     * Vote to an activity.
+     */
     public static function vote($id_user, $id_activity, $add)
     {
         $client = ApiRepository::getClient();
@@ -179,6 +194,9 @@ class ActivitiesRepository
         }
     }
 
+    /*
+     * Register to an activity.
+     */
     public static function register($id_user, $id_activity, $register)
     {
         $client = ApiRepository::getClient();
@@ -217,6 +235,9 @@ class ActivitiesRepository
         }
     }
 
+    /*
+     * Layout raw activities data to an new activities array.
+     */
     private static function filterActivities($activities)
     {
         $filteredActivities =  [];
@@ -235,6 +256,9 @@ class ActivitiesRepository
         return $filteredActivities;
     }
 
+    /*
+     * Layout raw activity data to an new activity array.
+     */
     private static function filterActivity($activity)
     {
         $filteredActivity =  [];
@@ -250,6 +274,9 @@ class ActivitiesRepository
         return $filteredActivity;
     }
 
+    /*
+     * Get the voters of activities.
+     */
     public static function getVoters($activities)
     {
         $client = ApiRepository::getClient();
@@ -268,6 +295,9 @@ class ActivitiesRepository
         return $filteredActivities;
     }
 
+    /*
+     * Get the registered users of activities.
+     */
     public static function getRegistered($activities)
     {
         $client = ApiRepository::getClient();

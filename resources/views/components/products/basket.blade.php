@@ -1,3 +1,4 @@
+{{-- Show the basket --}}
 {!!Form::open(['url' => 'panier/remove'])!!}
     <button class="btn btn-outline-danger">Vider le panier</button>
 {!!Form::close()!!}
@@ -19,6 +20,7 @@
          @endif
     </div>
 </div>
+{{-- Clear the basket --}}
 @if(isset($basket))
     {!!Form::open(['url' => 'panier/command'])!!}
         <button class="btn btn-outline-success">Procéder à la commande</button>

@@ -1,3 +1,4 @@
+{{-- The shopping cart page --}}
 @extends('pages.basic')
 
 @section('head')

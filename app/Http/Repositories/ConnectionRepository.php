@@ -13,6 +13,10 @@ use GuzzleHttp\Client;
 
 class ConnectionRepository {
 
+    /*
+     * Connect an user.
+     * Need the login and password.
+     */
     public static function getConnection($login, $password)
     {
         $client = ApiRepository::getClient();
@@ -24,6 +28,9 @@ class ConnectionRepository {
         $res = $res["result"];
         foreach ($res as $row)
         {
+            /*
+             * Hash the specified password and compare it to the BDD data.
+             */
             if ($row["users:email"] == $login && $row["users:password"] == hash('sha256', $password))
             {
                 return $row;
@@ -32,6 +39,9 @@ class ConnectionRepository {
         return null;
     }
 
+    /*
+     * Register an user.
+     */
     public static function registerUser($name, $lastname, $email, $password, $campusName)
     {
         $client = ApiRepository::getClient();
@@ -129,7 +139,9 @@ class ConnectionRepository {
         }
     }
 
-
+    /*
+     * verify if a query doesn't encounter errors.
+     */
     private static function hasErrors($response)
     {
         if (isset($response['error']))

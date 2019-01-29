@@ -9,10 +9,17 @@
 namespace App\Http\Repositories;
 use Illuminate\Support\Facades\Mail;
 
+/*
+ * Class used to send emails.
+ */
 class MailRepository
 {
     protected static $mail = "ProjetWEB562@gmail.com";
 
+    /*
+     * Send an email.
+     * Need recipient address, title and content.
+     */
     public static function sendMail($dest, $title, $content)
     {
         if (isset($dest))

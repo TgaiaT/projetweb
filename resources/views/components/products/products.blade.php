@@ -1,3 +1,4 @@
+{{-- Show products given by the controller --}}
 <div class="conteneur">
     <div class="container">
         <div class="row">

@@ -1,3 +1,4 @@
+{{-- The cgu components --}}
 <div id="cgu">
     <div class="conteneur">
         <h3 class='titre'>Traitement des données</h3>

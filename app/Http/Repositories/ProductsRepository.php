@@ -14,6 +14,9 @@ use GuzzleHttp\Exception\ConnectException;
 
 class ProductsRepository
 {
+    /*
+     * Get all the products.
+     */
     public static function getProducts($selector, $categories, $ordering, $name)
     {
         $client = ApiRepository::getClient();
@@ -25,6 +28,7 @@ class ProductsRepository
                 $url = $url . "&getCommands=true";
             }
             $products = json_decode((($client->request('GET', $url))->getBody()), true)["result"];
+            //Layout the products.
             return ProductsRepository::filterProducts($products, $selector, $categories, $ordering, $name);
 
         }catch (ConnectException | ClientException $e)
@@ -33,6 +37,9 @@ class ProductsRepository
         }
     }
 
+    /*
+     * Get the most sold products.
+     */
     public static function getMostSold()
     {
         $client = ApiRepository::getClient();
@@ -52,6 +59,9 @@ class ProductsRepository
         }
     }
 
+    /*
+     * Layout the raw products data to an products array.
+     */
     private static function filterProducts($prods, $selector, $categories, $ordering, $name)
     {
         $finalProducts =  [];
@@ -216,6 +226,9 @@ class ProductsRepository
         return $finalProducts;
     }
 
+    /*
+     * Count sells of products.
+     */
     private static function countSells($products)
     {
         $countedProducts =[];
@@ -232,6 +245,9 @@ class ProductsRepository
         return $countedProducts;
     }
 
+    /*
+     * Create a product.
+     */
     public static function createProduct($name, $picture, $description, $price, $categories)
     {
         $client = ApiRepository::getClient();
@@ -302,6 +318,9 @@ class ProductsRepository
         }
     }
 
+    /*
+     * Create a category.
+     */
     public static function createCategory($name)
     {
         $client = ApiRepository::getClient();
@@ -329,6 +348,9 @@ class ProductsRepository
         }
     }
 
+    /*
+     * Add a category to a product.
+     */
     public static function addCategory($category, $id_product)
     {
         $client = ApiRepository::getClient();
@@ -357,12 +379,18 @@ class ProductsRepository
         }
     }
 
+    /*
+     * Ban or forgive a product.
+     */
     public static function ban($id_product, $ban)
     {
         $client = ApiRepository::getClient();
         try
         {
             $url = "products/" . $id_product;
+            /*
+             * Ban a product.
+             */
             if ($ban)
             {
                 $res = json_decode((($client->request('PUT', $url, [
@@ -373,6 +401,9 @@ class ProductsRepository
                     ]
                 ]))->getBody()), true);
             }
+            /*
+             * Forgive a product.
+             */
             else
             {
                 $res = json_decode((($client->request('PUT', $url, [
@@ -398,6 +429,9 @@ class ProductsRepository
         }
     }
 
+    /*
+     * Purchase a product/command.
+     */
     public static function command($id_user, $id_product, $quantity)
     {
         $client = ApiRepository::getClient();
@@ -455,6 +489,9 @@ class ProductsRepository
         }
     }
 
+    /*
+     * Get all the categories.
+     */
     public static function getCategories()
     {
         $client = ApiRepository::getClient();

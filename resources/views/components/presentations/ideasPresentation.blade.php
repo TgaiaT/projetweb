@@ -1,3 +1,4 @@
+{{-- Presentation of the ideas box --}}
 <div id="ideasPresentation">
 	<div class="conteneur">
 		<h3 class="titre">Boite à idées</h3>

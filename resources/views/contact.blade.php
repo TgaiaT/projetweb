@@ -1,3 +1,4 @@
+{{-- The contact page --}}
 @extends('pages.basic')
 
 @section('head')

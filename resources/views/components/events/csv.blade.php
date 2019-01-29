@@ -1,3 +1,4 @@
+{{-- get the registered users of an event in CSV file --}}
 <div class="mx-auto my-2 mx-auto">
     {!!Form::open(['url' => 'event/csv', "target" => "_blank"])!!}
         <a href="/event/csv" target="_blank">

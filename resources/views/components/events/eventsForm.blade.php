@@ -1,3 +1,4 @@
+{{-- Form to create events --}}
 @push('js')
     <script src="/js/verif.js"></script>
 @endpush

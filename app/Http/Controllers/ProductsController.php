@@ -11,6 +11,10 @@ use App\Http\Repositories\BanRepository;
 
 class ProductsController extends Controller
 {
+    /*
+     * Get the shop view.
+     * get the most sold products and all the products and send it to the view.
+     */
     public function showShop(Request $request)
     {
         $categories = null;
@@ -31,16 +35,26 @@ class ProductsController extends Controller
         ]);
     }
 
+    /*
+     * Show the product form.
+     */
     public function createFormProduct(Request $request)
     {
         return view('createProduct');
     }
 
+    /*
+     * Show the category form.
+     */
     public function createFormCategory(Request $request)
     {
         return view('createCategory');
     }
 
+    /*
+     * Add a product to the basket.
+     * Add the product to the session and to the cookie.
+     */
     public function addToBasket(ProductRequest $request)
     {
         $request->validated();
@@ -70,11 +84,13 @@ class ProductsController extends Controller
         return redirect('/boutique');
     }
 
+    /*
+     * Create a product.
+     */
     public function createProduct(CreateProductRequest $request)
     {
         $request->validated();
 
-        //$category = $request->input("product_categories");
         $category = 9;
         if (
             isset($request->input("product_name")[0])
@@ -98,6 +114,9 @@ class ProductsController extends Controller
         }
     }
 
+    /*
+     * Create a category.
+     */
     public function createCategory(CreateCategoryRequest $request)
     {
         $request->validated();
@@ -118,6 +137,9 @@ class ProductsController extends Controller
         }
     }
 
+    /*
+     * Add a category to a specified product.
+     */
     public function addCategory(Request $request)
     {
         if (
@@ -137,6 +159,9 @@ class ProductsController extends Controller
         }
     }
 
+    /*
+     * Ban a product.
+     */
     public function ban(Request $request)
     {
         if (isset($request->input("id_product")[0]) && isset($request->session()->all()["user"]["id"]) && isset($request->input("method")[0]))

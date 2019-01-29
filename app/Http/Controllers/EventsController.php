@@ -13,6 +13,9 @@ use App\Http\Repositories\BanRepository;
 
 class EventsController extends Controller
 {
+    /*
+     * Show the event view.
+     */
     public function showEvents(Request $request)
     {
         $events = EventsRepository::getEvents();
@@ -25,11 +28,17 @@ class EventsController extends Controller
         ]);
     }
 
+    /*
+     * Show the event form.
+     */
     public function showCreateForm(Request $request)
     {
         return view('createEvent');
     }
 
+    /*
+     * Create an event.
+     */
     public function createEvent(CreateEventRequest $request)
     {
         $request->validated();
@@ -60,6 +69,9 @@ class EventsController extends Controller
         }
     }
 
+    /*
+     * Comment a picture.
+     */
     public function comment(CommentRequest $request)
     {
         $request->validated();
@@ -77,6 +89,10 @@ class EventsController extends Controller
         }
     }
 
+    /*
+     *  Add a picture on an event.
+     *  Store the picture in the '/images/events/' dir.
+     */
     public function addPicture(PictureRequest $request)
     {
         $request->validated();
@@ -97,6 +113,9 @@ class EventsController extends Controller
         }
     }
 
+    /*
+     * Ban an event.
+     */
     public function ban(Request $request)
     {
         if (isset($request->input("id_event")[0]) && isset($request->session()->all()["user"]["id"]) && isset($request->input("method")[0]))
@@ -114,6 +133,9 @@ class EventsController extends Controller
         }
     }
 
+    /*
+     * Like a picture on a event.
+     */
     public function like(Request $request)
     {
         if (isset($request->input("id_picture")[0]) && isset($request->session()->all()["user"]["id"]) && isset($request->input("method")[0]))
@@ -130,6 +152,10 @@ class EventsController extends Controller
         }
     }
 
+    /*
+     * Get all the registered users on an event.
+     * Download it in a csv file.
+     */
     public function getCsv(Request $request)
     {
         $result = $request->input("activity");

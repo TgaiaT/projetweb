@@ -1,3 +1,4 @@
+{{-- Presentation of the past events --}}
 <div id="memoriesPresentation">
     <div class="conteneur">
         <h3 class="titre">Souvenirs</h3>
