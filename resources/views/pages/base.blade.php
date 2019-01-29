@@ -1,5 +1,6 @@
 {{-- The meta and title element of the website --}}
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>{{ isset($title) ? $title : 'BDE EXIA NANCY'}}</title>
 <meta name="Description" content=
     @php
